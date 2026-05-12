@@ -1,194 +1,145 @@
 # Sandlip Oasis, Frontend Engineering Handbook
 
-> **The definitive guide to building world-class frontend applications at Sandlip Oasis.**
-> Authored by the Sandlip Oasis Engineering Team · Maintained as a living document.
+> The definitive guide to building frontend applications at Sandlip Oasis.
+> Authored by the Sandlip Oasis Engineering Team. Maintained as a living document.
 
 ---
 
-<div align="center">
+## Table of Contents
 
-**Repository Name Options**
-| Option | Description |
+- [About This Handbook](#about-this-handbook)
+- [Sandlip Oasis Engineering Culture](#sandlip-oasis-engineering-culture)
+- [Frontend Engineering Philosophy](#frontend-engineering-philosophy)
+- [How to Use This Guide](#how-to-use-this-guide)
+- [Developer Onboarding](#developer-onboarding)
+- [Recommended Tooling and Environment](#recommended-tooling-and-environment)
+- [Repository and Folder Structure](#repository-and-folder-structure)
+- [Git and GitHub Workflow](#git-and-github-workflow)
+- [HTML5](#html5)
+- [CSS3](#css3)
+- [JavaScript ES6+](#javascript-es6)
+- [React.js](#reactjs)
+- [Frontend Performance Optimization](#frontend-performance-optimization)
+- [Security Best Practices](#security-best-practices)
+- [Testing](#testing)
+- [Debugging Workflows](#debugging-workflows)
+- [Deployment](#deployment)
+- [Coding Standards and Conventions](#coding-standards-and-conventions)
+- [Common Mistakes and Anti-Patterns](#common-mistakes-and-anti-patterns)
+- [Frontend Project Checklist](#frontend-project-checklist)
+- [Recommended Libraries and Ecosystem](#recommended-libraries-and-ecosystem)
+- [Developer Roadmaps](#developer-roadmaps)
+- [Interview Preparation](#interview-preparation)
+- [Learning Resources](#learning-resources)
+- [Contribution Guidelines](#contribution-guidelines)
+
+---
+
+## About This Handbook
+
+This handbook is the single source of truth for frontend engineering at Sandlip Oasis. It covers how we write, review, test, and ship UI code — from a developer's first day to their most advanced system design decisions.
+
+This is not just a tutorial. It is a living engineering standard built from real-world practice and shaped by lessons the team has earned over time.
+
+| Audience | What You Will Find |
 |---|---|
-| `sandlip-oasis/frontend-handbook` | ✅ Recommended — clear, professional, discoverable |
-| `sandlip-oasis/frontend-engineering-guide` | Descriptive and role-aligned |
-| `sandlip-oasis/fe-craft` | Short, memorable, culture-forward |
-| `sandlip-oasis/ui-engineering-standards` | Formal, enterprise-grade |
-
-**Repository Description**
-> *The Sandlip Oasis Frontend Engineering Handbook — a comprehensive, production-grade guide covering HTML5, CSS3, JavaScript ES6+, and React.js for internal onboarding, training, and engineering standards.*
-
-**Suggested GitHub Topics**
-`frontend` `html5` `css3` `javascript` `react` `engineering-standards` `onboarding` `best-practices` `web-development` `accessibility` `performance` `sandlip-oasis` `frontend-architecture` `ui-engineering`
-
-</div>
+| New joiners | Onboarding steps, tooling setup, team culture |
+| Junior engineers | Fundamentals, guided code examples, learning paths |
+| Mid-level engineers | Architecture patterns, best practices, advanced React |
+| Senior engineers | Performance, security, scalability, contribution guidelines |
 
 ---
 
-## 📋 Table of Contents
+## Sandlip Oasis Engineering Culture
 
-<details>
-<summary><strong>Expand Full Table of Contents</strong></summary>
+At Sandlip Oasis, engineering is a craft. We believe the best software is built at the intersection of technical rigor, empathy for users, and pride in what we ship.
 
-- [About This Handbook](#-about-this-handbook)
-- [Sandlip Oasis Engineering Culture](#-sandlip-oasis-engineering-culture)
-- [Frontend Engineering Philosophy](#-frontend-engineering-philosophy)
-- [How to Use This Guide](#-how-to-use-this-guide)
-- [Developer Onboarding](#-developer-onboarding)
-- [Recommended Tooling & Environment](#-recommended-tooling--environment)
-- [Repository & Folder Structure](#-repository--folder-structure)
-- [Git & GitHub Workflow](#-git--github-workflow)
-- [HTML5](#-html5)
-  - [Fundamentals](#html5-fundamentals)
-  - [Semantic HTML](#semantic-html)
-  - [Forms & Validation](#forms--validation)
-  - [Accessibility (a11y)](#accessibility-a11y)
-  - [HTML Best Practices](#html-best-practices)
-- [CSS3](#-css3)
-  - [Fundamentals](#css3-fundamentals)
-  - [Layouts: Flexbox & Grid](#layouts-flexbox--grid)
-  - [Responsive Design](#responsive-design)
-  - [CSS Variables & Theming](#css-variables--theming)
-  - [Animations & Transitions](#animations--transitions)
-  - [CSS Architecture (BEM, ITCSS)](#css-architecture)
-  - [CSS Best Practices](#css-best-practices)
-- [JavaScript (ES6+)](#-javascript-es6)
-  - [Core Language Fundamentals](#core-language-fundamentals)
-  - [ES6+ Features Deep Dive](#es6-features-deep-dive)
-  - [Asynchronous JavaScript](#asynchronous-javascript)
-  - [DOM Manipulation](#dom-manipulation)
-  - [JavaScript Modules](#javascript-modules)
-  - [Error Handling](#error-handling)
-  - [JavaScript Best Practices](#javascript-best-practices)
-- [React.js](#-reactjs)
-  - [Core Concepts](#react-core-concepts)
-  - [Hooks Deep Dive](#hooks-deep-dive)
-  - [Component Architecture](#component-architecture)
-  - [State Management](#state-management)
-  - [API Integration](#api-integration)
-  - [React Performance](#react-performance)
-  - [React Best Practices](#react-best-practices)
-- [Frontend Performance Optimization](#-frontend-performance-optimization)
-- [Security Best Practices](#-security-best-practices)
-- [Testing](#-testing)
-- [Debugging Workflows](#-debugging-workflows)
-- [Deployment](#-deployment)
-- [Coding Standards & Conventions](#-coding-standards--conventions)
-- [Common Mistakes & Anti-Patterns](#-common-mistakes--anti-patterns)
-- [Frontend Project Checklist](#-frontend-project-checklist)
-- [Recommended Libraries & Ecosystem](#-recommended-libraries--ecosystem)
-- [Developer Roadmaps](#-developer-roadmaps)
-- [Interview Preparation](#-interview-preparation)
-- [Learning Resources](#-learning-resources)
-- [Contribution Guidelines](#-contribution-guidelines)
-
-</details>
-
----
-
-## 📖 About This Handbook
-
-This handbook is the **single source of truth** for frontend engineering at Sandlip Oasis. It defines how we build, review, test, and ship UI code — from a developer's first day to their most complex system design decision.
-
-This is not a tutorial. It is an **engineering standard** — grounded in real-world practice, shaped by hard-earned lessons, and continuously improved by the team that uses it.
-
-| Audience | What You'll Find |
-|---|---|
-| **New Joiners** | Onboarding steps, tooling setup, culture context |
-| **Junior Engineers** | Fundamentals, guided code examples, learning paths |
-| **Mid-level Engineers** | Architecture patterns, best practices, advanced React |
-| **Senior Engineers** | Performance, security, scalability, contribution guidelines |
-
----
-
-## 🌴 Sandlip Oasis Engineering Culture
-
-At Sandlip Oasis, engineering is a craft. We believe that the best software is built at the intersection of **technical rigor, empathy for users, and pride in craft**.
-
-Our engineering culture is defined by five values:
+Our culture is defined by five values:
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                                                         │
-│   1. CLARITY        — Write code that teaches itself    │
-│   2. OWNERSHIP      — Own your work end to end          │
-│   3. COLLABORATION  — Great software is a team sport    │
-│   4. ITERATION      — Ship, learn, improve, repeat      │
-│   5. INCLUSIVITY    — Build for every user              │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
+1. Clarity        — Write code that teaches itself
+2. Ownership      — Own your work from start to finish
+3. Collaboration  — Great software is a team effort
+4. Iteration      — Ship, learn, improve, repeat
+5. Inclusivity    — Build for every user
 ```
 
-We do not optimize for speed at the cost of quality. We do not accept "it works on my machine." We write code for the engineer who comes after us — because that engineer may be ourselves six months later.
+We do not optimize for speed at the cost of quality. We write code for the engineer who comes after us, because that engineer is often ourselves six months later.
 
 ---
 
-## 🧭 Frontend Engineering Philosophy
+## Frontend Engineering Philosophy
 
-> *"The UI is the product. Everything else is infrastructure."*
+> "The UI is the product. Everything else is infrastructure."
 
 ### Core Principles
 
-**1. Semantic First**
-HTML communicates meaning to browsers, assistive technologies, and search engines. Div soup is technical debt. Every element choice is a statement.
+**Semantic First**
 
-**2. Progressive Enhancement**
-Build a solid, functional baseline. Enhance with CSS. Enrich with JavaScript. Never build a wall — always provide a path for every user.
+HTML communicates meaning to browsers, assistive technologies, and search engines. Every element you choose is a statement. Avoid div soup — it is technical debt.
 
-**3. Performance is a Feature**
-A 3-second load is a failed UX. Performance is not a post-launch concern — it is an engineering discipline embedded from the first line of code.
+**Progressive Enhancement**
 
-**4. Accessibility is Non-Negotiable**
-Building for accessibility is not charity. It is engineering excellence. Every interactive element must be operable with a keyboard. Every image must have meaningful alt text. Every color contrast must meet WCAG standards.
+Build a solid, functional baseline in HTML. Enhance it with CSS. Enrich it with JavaScript. Never build a wall for any user.
 
-**5. Components are Contracts**
+**Performance is a Feature**
+
+A slow page is a broken experience. Performance is not a post-launch concern — it is an engineering discipline embedded from the first line of code.
+
+**Accessibility is Non-Negotiable**
+
+Building accessibly is not a bonus. It is engineering excellence. Every interactive element must work with a keyboard. Every image must have meaningful alt text. Every color contrast must meet WCAG standards.
+
+**Components are Contracts**
+
 A component makes a promise: given these props, I will produce this UI. That contract must be consistent, documented, and testable.
 
-**6. State is the Source of Truth**
-UI is a function of state. When the UI behaves unexpectedly, the answer lives in state — not in a CSS hack.
+**State is the Source of Truth**
+
+UI is a function of state. When the UI behaves unexpectedly, the answer lives in state — not in a CSS patch.
 
 ---
 
-## 🗺️ How to Use This Guide
+## How to Use This Guide
 
-This guide is organized in a **progressive learning sequence**. You do not need to read it front to back on day one. Use it as a reference, a curriculum, and a standard.
+This guide is organized in a progressive learning sequence. You do not need to read it front to back on day one. Use it as a reference, a curriculum, and a team standard.
 
 ```
-New to the team?        → Start with "Developer Onboarding"
-Learning HTML/CSS/JS?  → Work through sections in order
-Building in React?     → Jump to the React.js section
-Shipping to prod?      → Review the Checklist and Security sections
-Reviewing a PR?        → Reference Coding Standards & Anti-Patterns
-Preparing for interviews? → See the Interview Preparation section
+New to the team?           Start with the Developer Onboarding section
+Learning HTML, CSS, JS?    Work through sections in order
+Building in React?         Jump to the React.js section
+Shipping to production?    Review the Checklist and Security sections
+Reviewing a pull request?  Reference Coding Standards and Anti-Patterns
+Preparing for interviews?  See the Interview Preparation section
 ```
 
-> 💡 **Tip:** Bookmark this README. Reference it before opening a Stack Overflow tab.
+Tip: Bookmark this file. Reference it before opening a Stack Overflow tab.
 
 ---
 
-## 🚀 Developer Onboarding
+## Developer Onboarding
 
-### Week 1 Checklist
+### Week One Checklist
 
-```markdown
+```
 Day 1
- ☐ Set up development environment (see Tooling section)
- ☐ Clone the main frontend repository
- ☐ Run the project locally
- ☐ Read this handbook (skim in full, deep-read your focus areas)
- ☐ Meet your team lead and onboarding buddy
+  - Set up your development environment (see Tooling section)
+  - Clone the main frontend repository
+  - Run the project locally
+  - Read through this handbook
+  - Meet your team lead and onboarding buddy
 
-Day 2–3
- ☐ Complete your first "good first issue" task
- ☐ Submit your first pull request
- ☐ Attend a code review session as an observer
- ☐ Familiarize yourself with the CI/CD pipeline
+Day 2 to 3
+  - Complete your first "good first issue" task
+  - Submit your first pull request
+  - Attend a code review session as an observer
+  - Familiarize yourself with the CI/CD pipeline
 
-Day 4–5
- ☐ Deep-read the sections most relevant to your current task
- ☐ Set up your VS Code extensions (see Tooling section)
- ☐ Review 2–3 recent merged PRs to learn team conventions
- ☐ Introduce yourself in #frontend Slack channel
+Day 4 to 5
+  - Deep-read the sections most relevant to your current task
+  - Set up your VS Code extensions (see Tooling section below)
+  - Review two or three recently merged pull requests to learn team conventions
+  - Introduce yourself in the #frontend Slack channel
 ```
 
 ### Environment Setup
@@ -199,8 +150,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 nvm install --lts
 nvm use --lts
 
-# 2. Install package manager
-npm install -g pnpm   # Preferred at Sandlip Oasis
+# 2. Install the package manager we use at Sandlip Oasis
+npm install -g pnpm
 
 # 3. Clone the project
 git clone https://github.com/sandlip-oasis/<project-name>.git
@@ -209,34 +160,35 @@ cd <project-name>
 # 4. Install dependencies
 pnpm install
 
-# 5. Start development server
+# 5. Start the development server
 pnpm dev
 ```
 
-> ⚠️ **Warning:** Always use the Node.js version specified in `.nvmrc` or `package.json > engines`. Version mismatches cause silent, hard-to-debug failures.
+Warning: Always use the Node.js version specified in `.nvmrc` or `package.json > engines`. Version mismatches cause silent, hard-to-debug failures.
 
 ---
 
-## 🛠️ Recommended Tooling & Environment
+## Recommended Tooling and Environment
 
 ### VS Code Extensions
 
 | Extension | Purpose | Priority |
 |---|---|---|
-| **ESLint** | Live linting and error highlighting | Required |
-| **Prettier** | Automatic code formatting | Required |
-| **GitLens** | Enhanced Git history and blame | Required |
-| **ES7+ React Snippets** | React/JSX code snippets | Required |
-| **Tailwind CSS IntelliSense** | Autocomplete for Tailwind | If using Tailwind |
-| **Auto Rename Tag** | Sync opening/closing HTML tags | Strongly recommended |
-| **Path Intellisense** | File path autocomplete | Strongly recommended |
-| **Error Lens** | Inline error messages | Strongly recommended |
-| **Thunder Client** | Lightweight REST client in VS Code | Recommended |
-| **Code Spell Checker** | Catches typos in comments/strings | Recommended |
-| **Bracket Pair Colorization** | Built-in since VS Code 1.67 | Enable in settings |
-| **Import Cost** | Shows bundle size of imports | Recommended |
+| ESLint | Live linting and error highlighting | Required |
+| Prettier | Automatic code formatting | Required |
+| GitLens | Enhanced Git history and blame | Required |
+| ES7+ React Snippets | React and JSX code snippets | Required |
+| Auto Rename Tag | Syncs opening and closing HTML tags | Recommended |
+| Path Intellisense | File path autocomplete | Recommended |
+| Error Lens | Shows error messages inline | Recommended |
+| Import Cost | Shows bundle size of imports | Recommended |
+| Code Spell Checker | Catches typos in comments and strings | Recommended |
+| Thunder Client | Lightweight REST client inside VS Code | Recommended |
+| Tailwind CSS IntelliSense | Autocomplete for Tailwind classes | If using Tailwind |
 
-### VS Code Settings (`.vscode/settings.json`)
+### Shared VS Code Settings
+
+Add this to `.vscode/settings.json` at the root of the project so all team members share the same editor behavior:
 
 ```json
 {
@@ -256,39 +208,39 @@ pnpm dev
 
 ### Node.js Toolchain
 
-| Tool | Purpose | Notes |
-|---|---|---|
-| **pnpm** | Package manager | Faster, more disk-efficient than npm |
-| **Vite** | Build tool & dev server | Default for new projects |
-| **ESLint** | Static code analysis | Config in `.eslintrc.js` |
-| **Prettier** | Code formatter | Config in `.prettierrc` |
-| **Husky** | Git hooks | Lint/test before commit |
-| **lint-staged** | Run linters on staged files only | Works with Husky |
-| **commitlint** | Enforce commit message format | Conventional Commits |
+| Tool | Purpose |
+|---|---|
+| pnpm | Package manager — faster and more disk-efficient than npm |
+| Vite | Build tool and development server |
+| ESLint | Static code analysis |
+| Prettier | Code formatter |
+| Husky | Runs scripts before Git commits |
+| lint-staged | Runs linters only on staged files |
+| commitlint | Enforces consistent commit message format |
 
 ---
 
-## 📁 Repository & Folder Structure
+## Repository and Folder Structure
 
-### Recommended Project Structure
+### Project Structure
 
 ```
 my-app/
 ├── .github/
-│   ├── workflows/           # CI/CD GitHub Actions
+│   ├── workflows/
 │   │   ├── ci.yml
 │   │   └── deploy.yml
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── ISSUE_TEMPLATE/
-├── .husky/                  # Git hooks
-├── .vscode/                 # Shared editor settings
-├── public/                  # Static assets (favicon, robots.txt)
+├── .husky/
+├── .vscode/
+├── public/
 ├── src/
-│   ├── assets/              # Images, fonts, icons
+│   ├── assets/
 │   │   ├── images/
 │   │   └── fonts/
-│   ├── components/          # Reusable UI components
-│   │   ├── ui/              # Primitives: Button, Input, Modal
+│   ├── components/
+│   │   ├── ui/              # Reusable primitives: Button, Input, Modal
 │   │   ├── layout/          # Header, Footer, Sidebar, PageWrapper
 │   │   └── features/        # Feature-specific components
 │   │       ├── auth/
@@ -297,26 +249,25 @@ my-app/
 │   ├── hooks/               # Custom React hooks
 │   ├── pages/               # Route-level page components
 │   ├── services/            # API call functions
-│   ├── store/               # State management (Redux/Zustand/Context)
-│   ├── styles/              # Global styles, variables, themes
+│   ├── store/               # State management
+│   ├── styles/
 │   │   ├── globals.css
 │   │   ├── variables.css
 │   │   └── themes/
-│   ├── utils/               # Pure utility/helper functions
-│   ├── types/               # TypeScript types & interfaces (if using TS)
+│   ├── utils/               # Pure helper functions
+│   ├── types/               # TypeScript types and interfaces
 │   ├── constants/           # App-wide constants
-│   ├── config/              # Environment config, feature flags
+│   ├── config/              # Environment config and feature flags
 │   ├── App.jsx
 │   └── main.jsx
 ├── tests/
 │   ├── unit/
 │   ├── integration/
 │   └── e2e/
-├── .env.example             # Document all required env vars
+├── .env.example
 ├── .eslintrc.js
 ├── .prettierrc
 ├── .nvmrc
-├── index.html
 ├── vite.config.js
 ├── package.json
 └── README.md
@@ -324,42 +275,42 @@ my-app/
 
 ### Component Folder Pattern
 
-Each component lives in its own folder for co-location:
+Each component lives in its own folder so that related files stay together:
 
 ```
 src/components/ui/Button/
-├── Button.jsx          # Component logic
-├── Button.module.css   # Scoped styles
-├── Button.test.jsx     # Unit tests
-├── Button.stories.jsx  # Storybook stories (if applicable)
-└── index.js            # Clean re-export
+├── Button.jsx           # Component logic
+├── Button.module.css    # Scoped styles
+├── Button.test.jsx      # Unit tests
+├── Button.stories.jsx   # Storybook stories (if applicable)
+└── index.js             # Clean re-export
 ```
 
 ```js
 // src/components/ui/Button/index.js
 export { default } from './Button';
-export * from './Button'; // Named exports if any
 ```
 
-> 💡 **Tip:** Co-locating tests and styles with components reduces navigation overhead and makes components portable.
+Keeping tests and styles next to the component reduces navigation overhead and makes components easy to move or share across projects.
 
 ---
 
-## 🌿 Git & GitHub Workflow
+## Git and GitHub Workflow
 
 ### Branching Strategy
 
-We follow **GitHub Flow** — a lightweight, trunk-based workflow:
+We follow GitHub Flow — a simple, trunk-based workflow:
 
 ```
 main (protected)
- └── feature/[ticket-id]-short-description
- └── fix/[ticket-id]-short-description
- └── chore/update-dependencies
- └── docs/update-readme
+  └── feature/[ticket-id]-short-description
+  └── fix/[ticket-id]-short-description
+  └── chore/update-dependencies
+  └── docs/update-readme
 ```
 
-**Branch naming rules:**
+Branch naming examples:
+
 ```
 feature/SO-142-user-authentication
 fix/SO-201-login-button-overflow
@@ -370,28 +321,29 @@ refactor/SO-188-extract-auth-hook
 
 ### Commit Message Convention
 
-We use **Conventional Commits**:
+We follow the Conventional Commits format:
 
 ```
 <type>(<scope>): <short description>
 
 [optional body]
 
-[optional footer: BREAKING CHANGE or issue reference]
+[optional footer]
 ```
 
 | Type | When to Use |
 |---|---|
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `docs` | Documentation changes |
-| `style` | Formatting, no logic change |
-| `refactor` | Code restructure, no behavior change |
-| `test` | Adding/updating tests |
-| `chore` | Build system, dependency updates |
-| `perf` | Performance improvement |
+| feat | New feature |
+| fix | Bug fix |
+| docs | Documentation only |
+| style | Formatting, no logic change |
+| refactor | Code restructure, no behavior change |
+| test | Adding or updating tests |
+| chore | Build system or dependency updates |
+| perf | Performance improvement |
 
-**Examples:**
+Examples:
+
 ```bash
 git commit -m "feat(auth): add JWT refresh token logic"
 git commit -m "fix(button): resolve focus ring not showing in Safari"
@@ -401,47 +353,47 @@ git commit -m "docs(readme): update onboarding section for new toolchain"
 
 ### Pull Request Guidelines
 
+Use this template when opening a pull request:
+
 ```markdown
-## PR Checklist (add to PULL_REQUEST_TEMPLATE.md)
+## Description
+What does this PR do? Why?
 
-### Description
-<!-- What does this PR do? Why? -->
-
-### Type of Change
+## Type of Change
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Refactor
 - [ ] Documentation
 
-### Testing
-- [ ] Unit tests added/updated
-- [ ] Tested in Chrome, Firefox, Safari
-- [ ] Tested on mobile viewport
+## Testing
+- [ ] Unit tests added or updated
+- [ ] Tested in Chrome, Firefox, and Safari
+- [ ] Tested on a mobile viewport
 
-### Quality
+## Quality
 - [ ] No console.log statements left in code
 - [ ] No commented-out code blocks
 - [ ] Accessibility considerations addressed
-- [ ] Performance impact considered
 
-### Screenshots (if UI change)
-<!-- Before / After -->
+## Screenshots (if UI changed)
+Before and after screenshots
 ```
 
-**PR Rules:**
-- PRs must be **reviewed by at least 1 engineer** before merging
-- Keep PRs **focused and small** — aim for <400 lines changed
-- Link to the relevant issue/ticket
+Pull request rules:
+
+- Every PR must be reviewed by at least one engineer before merging
+- Keep PRs focused — aim for fewer than 400 lines changed
+- Link to the relevant issue or ticket
 - Resolve all review comments before merging
 - Squash commits on merge to keep history clean
 
 ---
 
-## 🏷️ HTML5
+## HTML5
 
-### HTML5 Fundamentals
+### What HTML Does
 
-HTML is the skeleton of the web. Every browser renders HTML into a DOM tree that CSS styles and JavaScript manipulates.
+HTML is the structure of every web page. Browsers read HTML and build a Document Object Model (DOM) — a tree of elements that CSS styles and JavaScript controls.
 
 ```html
 <!DOCTYPE html>
@@ -454,44 +406,42 @@ HTML is the skeleton of the web. Every browser renders HTML into a DOM tree that
     <link rel="stylesheet" href="/styles/globals.css" />
   </head>
   <body>
-    <!-- Content here -->
+    <!-- Page content goes here -->
     <script type="module" src="/main.js"></script>
   </body>
 </html>
 ```
 
-> ⚠️ **Critical:** Always include `lang` attribute on `<html>`. Screen readers use it to select the correct language profile.
+Always include the `lang` attribute on the `<html>` element. Screen readers use it to select the correct language voice.
 
 ### Semantic HTML
 
-Semantic elements communicate meaning — not just appearance. They improve accessibility, SEO, and code readability.
+Semantic elements tell the browser — and people using assistive tools — what a piece of content means, not just how it looks.
 
 | Element | Purpose |
 |---|---|
 | `<header>` | Introductory content for a page or section |
 | `<nav>` | Primary navigation links |
-| `<main>` | The dominant content of the `<body>` (one per page) |
-| `<article>` | Self-contained content (blog post, news story) |
-| `<section>` | Thematic grouping of content |
-| `<aside>` | Supplementary content (sidebar) |
-| `<footer>` | Footer for page or section |
-| `<figure>` + `<figcaption>` | Image with caption |
-| `<time>` | Date/time representation |
+| `<main>` | The dominant content of the page (use once per page) |
+| `<article>` | Self-contained content such as a blog post |
+| `<section>` | A thematic grouping of content |
+| `<aside>` | Supplementary content such as a sidebar |
+| `<footer>` | Footer for a page or section |
+| `<figure>` and `<figcaption>` | An image paired with a caption |
+| `<time>` | A date or time value |
 | `<address>` | Contact information |
 
-**Non-Semantic (Avoid):**
+Using `<div>` for everything destroys meaning. Here is the difference:
+
 ```html
-<!-- ❌ Bad: div soup — no meaning -->
+<!-- Bad: no meaning communicated to the browser or assistive tools -->
 <div class="header">
   <div class="nav">
     <div class="nav-item">Home</div>
   </div>
 </div>
-```
 
-**Semantic (Correct):**
-```html
-<!-- ✅ Good: communicates structure -->
+<!-- Good: structure is clear to browsers, screen readers, and developers -->
 <header>
   <nav aria-label="Primary navigation">
     <ul>
@@ -500,12 +450,14 @@ Semantic elements communicate meaning — not just appearance. They improve acce
     </ul>
   </nav>
 </header>
+
 <main>
   <article>
     <h1>Article Title</h1>
-    <p>Content...</p>
+    <p>Content here...</p>
   </article>
 </main>
+
 <footer>
   <p>&copy; 2025 Sandlip Oasis</p>
 </footer>
@@ -513,26 +465,28 @@ Semantic elements communicate meaning — not just appearance. They improve acce
 
 ### Heading Hierarchy
 
+Use one `<h1>` per page. Never skip heading levels for visual purposes — use CSS for sizing instead.
+
 ```html
-<!-- ✅ One h1 per page. Headings in logical order. -->
-<h1>Main Page Title</h1>          <!-- One per page -->
+<!-- Correct -->
+<h1>Main Page Title</h1>
   <h2>Major Section</h2>
     <h3>Subsection</h3>
-      <h4>Sub-subsection</h4>
 
-<!-- ❌ Never skip levels for visual styling -->
+<!-- Wrong: jumped from h1 to h4 -->
 <h1>Title</h1>
-<h4>Subtitle</h4>  <!-- WRONG: jumped from h1 to h4 -->
+<h4>Subtitle</h4>
 ```
 
-### Forms & Validation
+### Forms and Validation
+
+Forms are one of the most important and most broken parts of the web. Write them carefully.
 
 ```html
 <form action="/submit" method="POST" novalidate>
   <fieldset>
     <legend>Account Details</legend>
 
-    <!-- Label MUST be associated with input -->
     <div class="form-group">
       <label for="email">Email address</label>
       <input
@@ -544,7 +498,7 @@ Semantic elements communicate meaning — not just appearance. They improve acce
         aria-describedby="email-hint email-error"
         placeholder="you@example.com"
       />
-      <span id="email-hint" class="hint">We'll never share your email.</span>
+      <span id="email-hint" class="hint">We will never share your email.</span>
       <span id="email-error" class="error" role="alert" hidden>
         Please enter a valid email address.
       </span>
@@ -572,40 +526,42 @@ Semantic elements communicate meaning — not just appearance. They improve acce
 </form>
 ```
 
-**Input Type Reference:**
+Common input types and when to use them:
 
 | Type | Use Case |
 |---|---|
-| `text` | General short text |
-| `email` | Email addresses (triggers email keyboard on mobile) |
-| `password` | Passwords (masked input) |
-| `tel` | Phone numbers (triggers numeric keyboard) |
-| `number` | Numeric input with spinners |
-| `url` | URL input |
-| `search` | Search fields |
-| `date` / `time` | Date/time pickers |
-| `checkbox` | Boolean toggles |
-| `radio` | Single selection from a group |
-| `file` | File upload |
-| `range` | Slider input |
+| text | General short text |
+| email | Email addresses — triggers the email keyboard on mobile |
+| password | Passwords — input is masked |
+| tel | Phone numbers — triggers numeric keyboard on mobile |
+| number | Numeric input |
+| date | Date picker |
+| search | Search fields |
+| checkbox | A boolean toggle |
+| radio | One choice from a group |
+| file | File upload |
 
-### Accessibility (a11y)
+### Accessibility
 
-**WCAG 2.1 Compliance is required for all Sandlip Oasis products.** Target Level AA.
+Accessibility (a11y) means building products that every person can use, including people who use screen readers, keyboard-only navigation, or other assistive technology.
+
+We target WCAG 2.1 Level AA compliance on all Sandlip Oasis products.
 
 ```html
-<!-- 1. Images: meaningful alt text -->
+<!-- Images: describe what the image shows -->
 <img src="team-photo.jpg" alt="The Sandlip Oasis engineering team at the 2024 retreat" />
 
-<!-- Decorative images: empty alt -->
+<!-- Decorative images: use an empty alt so screen readers skip them -->
 <img src="decorative-wave.svg" alt="" role="presentation" />
 
-<!-- 2. Buttons vs links -->
-<!-- Use <button> for actions, <a> for navigation -->
+<!-- Use button for actions, anchor for navigation -->
 <button type="button" onclick="openModal()">Open Settings</button>
 <a href="/dashboard">Go to Dashboard</a>
 
-<!-- 3. ARIA roles and properties -->
+<!-- Skip navigation link: lets keyboard users jump past repeated navigation -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Expandable menus: use ARIA to communicate state -->
 <button
   aria-expanded="false"
   aria-controls="dropdown-menu"
@@ -617,103 +573,83 @@ Semantic elements communicate meaning — not just appearance. They improve acce
   <li role="menuitem"><a href="/profile">Profile</a></li>
   <li role="menuitem"><a href="/logout">Logout</a></li>
 </ul>
-
-<!-- 4. Skip navigation link (critical for keyboard users) -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
-<!-- 5. Focus management for modals -->
-<dialog aria-modal="true" aria-labelledby="modal-title">
-  <h2 id="modal-title">Confirm Deletion</h2>
-  <p>Are you sure you want to delete this item?</p>
-  <button autofocus>Cancel</button>
-  <button>Confirm</button>
-</dialog>
 ```
 
-**a11y Checklist:**
+Accessibility checklist:
+
 ```
-☐ All images have meaningful alt text
-☐ Color is not the only means of conveying information
-☐ Color contrast ratio is at least 4.5:1 for normal text
-☐ All interactive elements are keyboard-operable
-☐ Focus order follows visual reading order
-☐ Focus is visible and never removed
-☐ Forms have properly associated labels
-☐ Error messages are descriptive and announced by screen readers
-☐ Dynamic content changes are announced via aria-live regions
-☐ Page has a single <h1> and logical heading hierarchy
+- All images have meaningful alt text
+- Color is not the only way information is communicated
+- Text contrast ratio is at least 4.5:1
+- All interactive elements are operable with a keyboard
+- Focus is always visible and never removed
+- Forms have properly associated labels
+- Error messages describe the problem clearly
+- Dynamic content updates are announced to screen readers
+- The page has one h1 and a logical heading hierarchy
 ```
 
 ### HTML Best Practices
 
 ```html
-<!-- ✅ Use boolean attributes correctly -->
-<input type="checkbox" checked />
-<button disabled>Submit</button>
+<!-- Lazy load images that are below the visible area -->
+<img src="hero.jpg" alt="Hero" loading="eager" />    <!-- Above the fold -->
+<img src="team.jpg" alt="Team" loading="lazy" />     <!-- Below the fold -->
 
-<!-- ✅ Lazy load images below the fold -->
-<img src="hero.jpg" alt="Hero" loading="eager" />       <!-- Above fold -->
-<img src="team.jpg" alt="Team" loading="lazy" />        <!-- Below fold -->
-
-<!-- ✅ Preload critical resources -->
+<!-- Preload fonts and critical images early -->
 <link rel="preload" href="/fonts/brand.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preconnect" href="https://api.sandlipoasis.com" />
 
-<!-- ✅ Structured data for SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Sandlip Oasis",
-  "url": "https://sandlipoasis.com"
-}
-</script>
+<!-- Boolean attributes do not need a value -->
+<input type="checkbox" checked />
+<button disabled>Submit</button>
 ```
 
 ---
 
-## 🎨 CSS3
+## CSS3
 
-### CSS3 Fundamentals
+### The Box Model
 
-The cascade, specificity, and inheritance are the three laws of CSS. Understanding them prevents 90% of CSS bugs.
+Every element on a page is a box. That box has content, padding, a border, and a margin. Set `box-sizing: border-box` globally so that padding and borders are included in the element's declared width — this is the behavior most developers expect.
 
-**Specificity Hierarchy (highest → lowest):**
-```
-Inline styles           → 1,0,0,0  (style="")
-ID selectors            → 0,1,0,0  (#id)
-Class / Pseudo-class    → 0,0,1,0  (.class, :hover)
-Element / Pseudo-element→ 0,0,0,1  (div, ::before)
-Universal selector      → 0,0,0,0  (*)
-```
-
-**The Box Model:**
 ```css
-/* box-sizing: border-box is the sane default */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-.element {
-  width: 300px;       /* Total rendered width */
-  padding: 16px;      /* INCLUDED in width with border-box */
-  border: 2px solid;  /* INCLUDED in width with border-box */
-  margin: 24px;       /* Outside the box */
+.card {
+  width: 300px;    /* Total rendered width, including padding and border */
+  padding: 16px;
+  border: 2px solid;
+  margin: 24px;    /* Outside the box — not included in width */
 }
 ```
 
-### CSS Custom Properties (Variables)
+### The Cascade and Specificity
+
+CSS rules can conflict. The browser resolves conflicts using specificity — a scoring system:
+
+```
+Inline styles        1,0,0,0   (style="")
+ID selectors         0,1,0,0   (#id)
+Class selectors      0,0,1,0   (.class, :hover)
+Element selectors    0,0,0,1   (div, p, h1)
+Universal selector   0,0,0,0   (*)
+```
+
+Higher specificity wins. Avoid overly specific selectors — they become hard to override without `!important`, which creates its own problems.
+
+### CSS Variables
+
+CSS variables (custom properties) make your design consistent and easy to update. Define them once, use them everywhere.
 
 ```css
-/* Define at root for global access */
 :root {
-  /* Color Palette */
+  /* Colors */
   --color-primary: #1a73e8;
   --color-primary-dark: #1558b0;
-  --color-primary-light: #e8f0fe;
-  --color-secondary: #0d9488;
   --color-danger: #dc2626;
-  --color-warning: #d97706;
   --color-success: #16a34a;
 
   /* Neutrals */
@@ -722,7 +658,7 @@ Universal selector      → 0,0,0,0  (*)
   --color-gray-500: #6b7280;
   --color-gray-900: #111827;
 
-  /* Semantic tokens */
+  /* Semantic tokens — use these in components, not raw colors */
   --color-text-primary: var(--color-gray-900);
   --color-text-secondary: var(--color-gray-500);
   --color-bg-surface: #ffffff;
@@ -730,28 +666,23 @@ Universal selector      → 0,0,0,0  (*)
 
   /* Typography */
   --font-sans: 'Inter Variable', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
   --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.6;
 
-  /* Spacing Scale */
+  /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
-  --space-3: 0.75rem;
   --space-4: 1rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
   --space-12: 3rem;
-  --space-16: 4rem;
 
-  /* Radius */
+  /* Border radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -759,41 +690,37 @@ Universal selector      → 0,0,0,0  (*)
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
-  --transition-slow: 400ms ease;
 }
 
-/* Dark mode */
+/* Dark mode: override only the semantic tokens */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text-primary: var(--color-gray-50);
-    --color-text-secondary: var(--color-gray-400);
+    --color-text-secondary: #9ca3af;
     --color-bg-surface: #1f2937;
     --color-bg-page: #111827;
   }
 }
 ```
 
-### Layouts: Flexbox & Grid
+### Layouts: Flexbox and Grid
 
-**Flexbox — one-dimensional layout:**
+**Flexbox** is for one-dimensional layouts — a row or a column.
 
 ```css
-/* Common flexbox patterns */
-
-/* Centered content */
+/* Center something horizontally and vertically */
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Space between navigation items */
+/* Navigation bar with logo on the left, links on the right */
 .nav {
   display: flex;
   align-items: center;
@@ -801,51 +728,33 @@ Universal selector      → 0,0,0,0  (*)
   gap: var(--space-4);
 }
 
-/* Card list that wraps */
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-6);
-}
-
-/* Sidebar + content layout */
+/* Sidebar and main content side by side */
 .page-layout {
   display: flex;
   gap: var(--space-8);
 }
 
 .sidebar {
-  flex: 0 0 280px;    /* Don't grow, don't shrink, fixed at 280px */
+  flex: 0 0 280px;   /* Does not grow, does not shrink, always 280px */
 }
 
 .content {
-  flex: 1;            /* Take remaining space */
-  min-width: 0;       /* Prevent overflow (critical!) */
+  flex: 1;           /* Takes the remaining space */
+  min-width: 0;      /* Prevents content overflow — always include this */
 }
 ```
 
-**CSS Grid — two-dimensional layout:**
+**CSS Grid** is for two-dimensional layouts — rows and columns at the same time.
 
 ```css
-/* 12-column grid system */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-6);
-}
-
-.col-span-4 { grid-column: span 4; }
-.col-span-6 { grid-column: span 6; }
-.col-span-12 { grid-column: span 12; }
-
-/* Auto-fill responsive cards — no media queries needed */
-.auto-grid {
+/* A card grid that wraps automatically — no media queries needed */
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-6);
 }
 
-/* Complex page layout */
+/* Full page layout with named areas */
 .app-shell {
   display: grid;
   grid-template-areas:
@@ -865,22 +774,12 @@ Universal selector      → 0,0,0,0  (*)
 
 ### Responsive Design
 
-We use a **mobile-first** approach. Start with mobile styles, then add breakpoints for larger screens.
+We use a mobile-first approach. Write base styles for small screens, then add `min-width` media queries to adapt for larger screens.
 
 ```css
-/* Breakpoint system */
-:root {
-  --bp-sm:  640px;
-  --bp-md:  768px;
-  --bp-lg:  1024px;
-  --bp-xl:  1280px;
-  --bp-2xl: 1536px;
-}
-
-/* Mobile-first: base styles apply to all sizes */
+/* Base styles apply to all screen sizes */
 .card {
   padding: var(--space-4);
-  font-size: var(--font-size-base);
 }
 
 /* Tablet and up */
@@ -894,32 +793,15 @@ We use a **mobile-first** approach. Start with mobile styles, then add breakpoin
 @media (min-width: 1024px) {
   .card {
     padding: var(--space-8);
-    font-size: var(--font-size-lg);
   }
 }
 
-/* Fluid typography with clamp() */
+/* Fluid typography: scales smoothly between a minimum and maximum size */
 h1 {
   font-size: clamp(1.75rem, 4vw + 1rem, 3.5rem);
 }
 
-/* Container queries (modern approach) */
-.card-container {
-  container-type: inline-size;
-  container-name: card;
-}
-
-@container card (min-width: 400px) {
-  .card-inner {
-    display: flex;
-    gap: var(--space-4);
-  }
-}
-```
-
-**Responsive images:**
-```css
-/* Images never overflow their container */
+/* Images should never overflow their container */
 img, video {
   max-width: 100%;
   height: auto;
@@ -927,21 +809,19 @@ img, video {
 }
 ```
 
-### Animations & Transitions
+### Animations and Transitions
 
 ```css
-/* Transitions: for state changes (hover, focus, active) */
+/* Transitions: smooth state changes on hover or focus */
 .button {
   background-color: var(--color-primary);
   transition: background-color var(--transition-fast),
-              transform var(--transition-fast),
-              box-shadow var(--transition-fast);
+              transform var(--transition-fast);
 }
 
 .button:hover {
   background-color: var(--color-primary-dark);
   transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
 }
 
 .button:active {
@@ -964,45 +844,30 @@ img, video {
   animation: fade-in 300ms ease forwards;
 }
 
-/* Skeleton loading pulse */
-@keyframes skeleton-pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
-}
-
-.skeleton {
-  background: var(--color-gray-200);
-  border-radius: var(--radius-sm);
-  animation: skeleton-pulse 1.5s ease-in-out infinite;
-}
-
-/* Respect user motion preferences — ALWAYS */
+/* Always respect the user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 ```
 
-### CSS Architecture
+### CSS Architecture (BEM Naming)
 
-We use a hybrid approach combining **BEM naming** with **utility classes** for a maintainable codebase.
-
-**BEM (Block Element Modifier):**
+We use BEM (Block Element Modifier) for naming CSS classes. It makes stylesheets predictable and avoids naming collisions.
 
 ```css
-/* Block */
+/* Block: the component itself */
 .card { }
 
-/* Element (part of the block) */
+/* Element: a part of the block, connected with double underscore */
 .card__header { }
 .card__body { }
-.card__footer { }
 .card__title { }
+.card__footer { }
 
-/* Modifier (variation) */
+/* Modifier: a variation, connected with double dash */
 .card--featured { }
 .card--compact { }
 .card__title--large { }
@@ -1019,7 +884,8 @@ We use a hybrid approach combining **BEM naming** with **utility classes** for a
 </div>
 ```
 
-**CSS Modules (recommended for React):**
+For React projects, we use CSS Modules to scope styles to a single component:
+
 ```css
 /* Button.module.css */
 .button {
@@ -1045,159 +911,147 @@ We use a hybrid approach combining **BEM naming** with **utility classes** for a
 ```jsx
 import styles from './Button.module.css';
 
-const Button = ({ variant = 'primary', children }) => (
-  <button className={`${styles.button} ${styles[variant]}`}>
-    {children}
-  </button>
-);
+function Button({ variant = 'primary', children }) {
+  return (
+    <button className={`${styles.button} ${styles[variant]}`}>
+      {children}
+    </button>
+  );
+}
 ```
 
 ### CSS Best Practices
 
 ```css
-/* ✅ Use logical properties for internationalization */
-.element {
-  margin-inline: auto;          /* Not margin-left/right */
-  padding-block: var(--space-4); /* Not padding-top/bottom */
-  border-inline-start: 3px solid; /* Not border-left */
-}
+/* Use variables instead of magic numbers */
 
-/* ✅ Avoid magic numbers — use variables */
-/* ❌ Bad */
+/* Bad */
 .header { height: 64px; }
 
-/* ✅ Good */
+/* Good */
 :root { --header-height: 64px; }
 .header { height: var(--header-height); }
 
-/* ✅ Use :is() and :where() for cleaner selectors */
-:is(h1, h2, h3, h4, h5, h6) {
-  font-weight: 600;
-  line-height: var(--line-height-tight);
+/* Use gap for spacing inside flex and grid containers */
+.button-group {
+  display: flex;
+  gap: var(--space-3);   /* Not margin-right on individual children */
 }
 
-/* ✅ Prevent layout shifts with aspect-ratio */
+/* Maintain consistent aspect ratios for media elements */
 .video-container {
   aspect-ratio: 16 / 9;
   width: 100%;
 }
 
-/* ✅ Use gap instead of margin for flex/grid spacing */
-.button-group {
-  display: flex;
-  gap: var(--space-3);  /* Not margin-right on children */
+/* Use :is() for cleaner grouped selectors */
+:is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 600;
+  line-height: 1.25;
 }
 ```
 
 ---
 
-## ⚡ JavaScript (ES6+)
+## JavaScript ES6+
 
-### Core Language Fundamentals
+### Variables
 
-**Variables: Always prefer `const`, use `let` when reassignment is needed, never use `var`.**
-
-```js
-// ✅ Correct
-const API_BASE = 'https://api.sandlipoasis.com';
-let retryCount = 0;
-
-// ❌ Never
-var userData = {};
-```
-
-**Equality: Always use strict equality (`===`).**
+Always use `const` by default. Use `let` when you need to reassign a value. Never use `var`.
 
 ```js
-// ❌ Avoid: type coercion causes subtle bugs
-0 == false   // true
-'' == false  // true
-null == undefined // true
-
-// ✅ Correct: no coercion
-0 === false   // false
-'' === false  // false
+const API_BASE = 'https://api.sandlipoasis.com';  // Will never change
+let retryCount = 0;                                // Will be incremented later
 ```
 
-### ES6+ Features Deep Dive
+### Equality
 
-**Destructuring:**
+Always use strict equality (`===`). The loose equality operator (`==`) performs type coercion and produces surprising results.
+
+```js
+// Loose equality — avoid
+0 == false         // true
+'' == false        // true
+null == undefined  // true
+
+// Strict equality — always use this
+0 === false        // false
+'' === false       // false
+```
+
+### Destructuring
+
+Destructuring lets you unpack values from objects or arrays into named variables.
 
 ```js
 // Object destructuring
 const user = { name: 'Amara', role: 'engineer', team: 'frontend' };
-const { name, role, team = 'unknown' } = user; // default value
-const { name: userName } = user; // rename
+const { name, role } = user;
+const { name: userName } = user;         // Rename the variable
+const { team = 'unknown' } = user;       // Use a default value
 
 // Array destructuring
 const [first, second, ...rest] = [1, 2, 3, 4, 5];
 
-// Function parameter destructuring (very common in React)
+// In function parameters (common in React)
 function UserCard({ name, role, avatarUrl = '/default-avatar.png' }) {
-  return <div>{name} - {role}</div>;
+  return <div>{name} — {role}</div>;
 }
-
-// Nested destructuring
-const { address: { city, country } } = { address: { city: 'Lagos', country: 'Nigeria' } };
 ```
 
-**Spread & Rest:**
+### Spread and Rest
 
 ```js
-// Spread: expand iterables
+// Spread: expand an object or array into another
 const defaults = { theme: 'light', lang: 'en', fontSize: 16 };
-const userPrefs = { theme: 'dark', fontSize: 18 };
-const finalConfig = { ...defaults, ...userPrefs }; 
-// → { theme: 'dark', lang: 'en', fontSize: 18 }
+const userPrefs = { theme: 'dark' };
+const config = { ...defaults, ...userPrefs };
+// Result: { theme: 'dark', lang: 'en', fontSize: 16 }
 
-// Array spread
+// Spread arrays
 const allUsers = [...adminUsers, ...regularUsers];
 
-// Rest: collect remaining arguments
+// Rest: collect remaining arguments into an array
 function log(level, ...messages) {
   console[level](messages.join(' '));
 }
-log('info', 'User', 'logged', 'in'); // User logged in
+log('info', 'User', 'logged', 'in');
 ```
 
-**Template Literals:**
+### Template Literals
 
 ```js
 const name = 'Amara';
 const role = 'Senior Engineer';
 
-// ✅ Template literals
-const greeting = `Welcome back, ${name}! You are logged in as ${role}.`;
+const greeting = `Welcome back, ${name}. You are logged in as ${role}.`;
 
 // Multi-line strings
 const emailBody = `
   Dear ${name},
 
   Your account has been updated.
-  
-  — The Sandlip Oasis Team
-`.trim();
 
-// Tagged templates (used in styled-components, SQL, etc.)
-const query = sql`SELECT * FROM users WHERE id = ${userId}`;
+  The Sandlip Oasis Team
+`.trim();
 ```
 
-**Arrow Functions:**
+### Arrow Functions
 
 ```js
-// Concise syntax
 const double = x => x * 2;
 const add = (a, b) => a + b;
-const getUser = (id) => ({ id, name: 'Amara' }); // Wrap objects in ()
+const getUser = (id) => ({ id, name: 'Amara' });  // Wrap object literal in ()
 
-// Arrow functions do NOT have their own `this`
+// Arrow functions do not have their own `this`
+// This makes them ideal for class methods and callbacks
 class Timer {
   constructor() {
     this.seconds = 0;
   }
 
   start() {
-    // ✅ Arrow function captures `this` from enclosing scope
+    // `this` correctly refers to the Timer instance
     setInterval(() => {
       this.seconds++;
     }, 1000);
@@ -1205,97 +1059,70 @@ class Timer {
 }
 ```
 
-**Optional Chaining & Nullish Coalescing:**
+### Optional Chaining and Nullish Coalescing
+
+These two operators prevent most null reference errors.
 
 ```js
-// Optional chaining (?.) — safe property access
+// Optional chaining: safely access nested properties
 const user = null;
-const city = user?.address?.city;       // undefined (not TypeError)
-const firstTag = user?.tags?.[0];       // Array access
-const name = user?.getName?.();         // Method call
+const city = user?.address?.city;     // undefined, not a TypeError
+const firstTag = user?.tags?.[0];     // Safe array access
+const name = user?.getName?.();       // Safe method call
 
-// Nullish coalescing (??) — fallback for null/undefined ONLY
-const displayName = user?.name ?? 'Anonymous';  // Only falls back on null/undefined
-const count = user?.count ?? 0;
+// Nullish coalescing: use a fallback only for null or undefined
+const displayName = user?.name ?? 'Anonymous';
 
-// Difference from ||
-const value = 0 || 'default';   // 'default' (0 is falsy)
-const value2 = 0 ?? 'default';  // 0 (0 is not null/undefined)
+// The key difference from ||
+const count = 0 || 'default';    // 'default' because 0 is falsy
+const count2 = 0 ?? 'default';   // 0 because 0 is not null or undefined
 ```
 
-**Array Methods:**
+### Array Methods
+
+These are the most used tools in JavaScript for working with lists of data.
 
 ```js
 const engineers = [
   { name: 'Amara', role: 'frontend', level: 'senior', active: true },
-  { name: 'Kofi', role: 'backend', level: 'mid', active: true },
-  { name: 'Zara', role: 'frontend', level: 'junior', active: false },
-  { name: 'Jide', role: 'frontend', level: 'mid', active: true },
+  { name: 'Kofi',  role: 'backend',  level: 'mid',    active: true },
+  { name: 'Zara',  role: 'frontend', level: 'junior', active: false },
+  { name: 'Jide',  role: 'frontend', level: 'mid',    active: true },
 ];
 
-// filter: returns new array of matching items
+// filter: keep items that match a condition
 const frontendEngineers = engineers.filter(e => e.role === 'frontend');
 
-// map: transforms each item
-const names = engineers.map(e => e.name); // ['Amara', 'Kofi', 'Zara', 'Jide']
+// map: transform every item into something new
+const names = engineers.map(e => e.name);
+// ['Amara', 'Kofi', 'Zara', 'Jide']
 
-// find: returns first match (or undefined)
+// find: return the first item that matches
 const senior = engineers.find(e => e.level === 'senior');
 
-// findIndex: returns index of first match (or -1)
-const kofiIndex = engineers.findIndex(e => e.name === 'Kofi');
+// some: returns true if at least one item matches
+const hasJunior = engineers.some(e => e.level === 'junior');  // true
 
-// some: returns true if any item matches
-const hasJunior = engineers.some(e => e.level === 'junior'); // true
+// every: returns true only if all items match
+const allActive = engineers.every(e => e.active);  // false
 
-// every: returns true if all items match
-const allActive = engineers.every(e => e.active); // false
-
-// reduce: accumulates a single value
+// reduce: accumulate a single value from the whole array
 const activeCount = engineers.reduce((count, e) => count + (e.active ? 1 : 0), 0);
 
-// Chaining
+// Chain methods together for expressive transformations
 const activeFrontendNames = engineers
   .filter(e => e.role === 'frontend' && e.active)
-  .map(e => e.name.toUpperCase())
+  .map(e => e.name)
   .sort();
-
-// flat & flatMap
-const nested = [[1, 2], [3, 4], [5]];
-nested.flat();           // [1, 2, 3, 4, 5]
-
-const sentences = ['hello world', 'foo bar'];
-sentences.flatMap(s => s.split(' ')); // ['hello', 'world', 'foo', 'bar']
-```
-
-**Object Methods:**
-
-```js
-const config = { host: 'localhost', port: 3000, debug: true };
-
-Object.keys(config);    // ['host', 'port', 'debug']
-Object.values(config);  // ['localhost', 3000, true]
-Object.entries(config); // [['host', 'localhost'], ['port', 3000], ...]
-
-// Build object from entries
-const uppercased = Object.fromEntries(
-  Object.entries(config).map(([k, v]) => [k.toUpperCase(), v])
-);
-
-// Object.assign (prefer spread syntax)
-const merged = Object.assign({}, defaults, overrides);
-const merged2 = { ...defaults, ...overrides }; // ✅ Preferred
-
-// Freeze an object (shallow immutability)
-const STATUS = Object.freeze({ PENDING: 'pending', ACTIVE: 'active' });
 ```
 
 ### Asynchronous JavaScript
 
+JavaScript runs one operation at a time. Async code lets the program start a long operation, move on, and come back when the result is ready.
+
 **Promises:**
 
 ```js
-// Creating a promise
 function fetchUser(id) {
   return new Promise((resolve, reject) => {
     if (!id) {
@@ -1306,41 +1133,21 @@ function fetchUser(id) {
   });
 }
 
-// Promise chaining
 fetchUser(1)
   .then(user => enrichUserData(user))
-  .then(enrichedUser => updateUI(enrichedUser))
+  .then(enriched => updateUI(enriched))
   .catch(error => handleError(error))
   .finally(() => hideLoadingSpinner());
-
-// Promise combinators
-const [user, posts, settings] = await Promise.all([
-  fetchUser(id),
-  fetchPosts(id),
-  fetchSettings(id),
-]);
-
-// First to resolve
-const fastest = await Promise.race([primaryAPI(), fallbackAPI()]);
-
-// All settle (never rejects)
-const results = await Promise.allSettled([fetchA(), fetchB()]);
-results.forEach(result => {
-  if (result.status === 'fulfilled') console.log(result.value);
-  if (result.status === 'rejected') console.error(result.reason);
-});
 ```
 
-**Async/Await:**
+**Async/Await** makes async code read like regular synchronous code:
 
 ```js
-// ✅ Clean, readable async code
 async function loadDashboard(userId) {
   try {
-    // Sequential (one waits for the other)
     const user = await fetchUser(userId);
 
-    // Parallel (both start simultaneously)
+    // Start both requests at the same time rather than waiting for each sequentially
     const [posts, notifications] = await Promise.all([
       fetchPosts(userId),
       fetchNotifications(userId),
@@ -1355,18 +1162,13 @@ async function loadDashboard(userId) {
     }
   }
 }
-
-// Async IIFE (immediately invoked)
-(async () => {
-  const data = await loadDashboard('user-123');
-  renderDashboard(data);
-})();
 ```
 
-**Fetch API:**
+### A Reusable API Client
+
+Instead of writing fetch calls scattered throughout your app, centralize them in one place:
 
 ```js
-// Centralized API client
 const apiClient = {
   baseURL: import.meta.env.VITE_API_BASE_URL,
 
@@ -1394,25 +1196,17 @@ const apiClient = {
     return response.json();
   },
 
-  get: (endpoint, options) =>
-    apiClient.request(endpoint, { method: 'GET', ...options }),
+  get: (endpoint) =>
+    apiClient.request(endpoint, { method: 'GET' }),
 
-  post: (endpoint, body, options) =>
-    apiClient.request(endpoint, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      ...options,
-    }),
+  post: (endpoint, body) =>
+    apiClient.request(endpoint, { method: 'POST', body: JSON.stringify(body) }),
 
-  put: (endpoint, body, options) =>
-    apiClient.request(endpoint, {
-      method: 'PUT',
-      body: JSON.stringify(body),
-      ...options,
-    }),
+  put: (endpoint, body) =>
+    apiClient.request(endpoint, { method: 'PUT', body: JSON.stringify(body) }),
 
-  delete: (endpoint, options) =>
-    apiClient.request(endpoint, { method: 'DELETE', ...options }),
+  delete: (endpoint) =>
+    apiClient.request(endpoint, { method: 'DELETE' }),
 };
 
 // Usage
@@ -1420,32 +1214,10 @@ const user = await apiClient.get('/users/1');
 const newPost = await apiClient.post('/posts', { title: 'Hello', body: 'World' });
 ```
 
-### JavaScript Modules
-
-```js
-// Named exports (multiple per file)
-export const formatDate = (date) => new Intl.DateTimeFormat('en-GB').format(date);
-export const formatCurrency = (amount, currency = 'USD') =>
-  new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(amount);
-
-// Default export (one per file, usually the main thing)
-export default class UserService { ... }
-
-// Re-exports (barrel files — use sparingly)
-// src/utils/index.js
-export { formatDate, formatCurrency } from './formatters';
-export { debounce, throttle } from './timing';
-export { classNames } from './dom';
-
-// Dynamic imports (code splitting)
-const LazyComponent = lazy(() => import('./components/HeavyChart'));
-const { default: Chart } = await import('./Chart.js');
-```
-
 ### Error Handling
 
 ```js
-// Custom error classes
+// Create specific error classes so you can handle errors by type
 class APIError extends Error {
   constructor(message, status, data) {
     super(message);
@@ -1463,7 +1235,6 @@ class ValidationError extends Error {
   }
 }
 
-// Error handling strategy
 function handleError(error) {
   if (error instanceof ValidationError) {
     showFormErrors(error.fields);
@@ -1482,21 +1253,38 @@ function handleError(error) {
 ### JavaScript Best Practices
 
 ```js
-// ✅ Pure functions: no side effects, predictable output
+// Write pure functions: same input always gives the same output, no side effects
 const calculateTotal = (items) =>
   items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-// ✅ Guard clauses reduce nesting
+// Use guard clauses to avoid deeply nested if statements
 function processUser(user) {
   if (!user) throw new Error('User is required');
   if (!user.isActive) return null;
   if (!user.hasPermission) throw new PermissionError();
 
-  // Main logic here — no deep nesting
+  // Main logic is clean and easy to read
   return transformUser(user);
 }
 
-// ✅ Debounce expensive operations
+// Return new data instead of mutating arguments
+
+// Bad
+function addItem(cart, item) {
+  cart.items.push(item);  // Modifies the original
+  return cart;
+}
+
+// Good
+function addItem(cart, item) {
+  return {
+    ...cart,
+    items: [...cart.items, item],
+    total: cart.total + item.price,
+  };
+}
+
+// Debounce operations that fire frequently, like search inputs
 function debounce(fn, delay) {
   let timeoutId;
   return (...args) => {
@@ -1509,49 +1297,25 @@ const handleSearch = debounce(async (query) => {
   const results = await searchAPI(query);
   renderResults(results);
 }, 300);
-
-// ✅ Avoid mutation — return new data
-// ❌ Bad
-function addItem(cart, item) {
-  cart.items.push(item);  // Mutates original
-  return cart;
-}
-
-// ✅ Good
-function addItem(cart, item) {
-  return {
-    ...cart,
-    items: [...cart.items, item],
-    total: cart.total + item.price,
-  };
-}
 ```
 
 ---
 
-## ⚛️ React.js
+## React.js
 
-### React Core Concepts
+React renders a UI as a function of state: `UI = f(state)`. Master this mental model before everything else. When the UI behaves unexpectedly, the first question is always: what does state contain right now?
 
-React renders a UI as a **function of state**: `UI = f(state)`. Master this mental model before all else.
+### JSX
 
-**JSX:**
+JSX is a syntax extension that lets you write HTML-like code inside JavaScript files.
 
 ```jsx
-// JSX is syntactic sugar for React.createElement()
-// This JSX:
-const element = <h1 className="title">Hello, {name}!</h1>;
-
-// Compiles to:
-const element = React.createElement('h1', { className: 'title' }, `Hello, ${name}!`);
-
 // JSX rules:
-// 1. Return a single root element (or Fragment)
-// 2. className, not class
-// 3. htmlFor, not for
-// 4. All tags must be closed (self-closing: <img />, <br />)
-// 5. camelCase for event handlers (onClick, onChange)
-// 6. JavaScript expressions in {}
+// 1. Return a single root element, or use a Fragment: <>...</>
+// 2. Use className, not class
+// 3. Use htmlFor, not for (on label elements)
+// 4. All tags must be closed, including self-closing: <img />, <br />
+// 5. JavaScript expressions go inside curly braces {}
 
 function UserCard({ user }) {
   return (
@@ -1564,37 +1328,33 @@ function UserCard({ user }) {
 }
 ```
 
-### Hooks Deep Dive
-
-**`useState` — local component state:**
+### useState — Local Component State
 
 ```jsx
 import { useState } from 'react';
 
 function Counter() {
-  // [state, setter] = useState(initialValue)
   const [count, setCount] = useState(0);
 
-  // ✅ Functional updates — use when next state depends on previous
+  // Use a function update when the new state depends on the previous value
   const increment = () => setCount(prev => prev + 1);
   const decrement = () => setCount(prev => prev - 1);
 
   return (
     <div>
-      <button onClick={decrement}>−</button>
+      <button onClick={decrement}>-</button>
       <span>{count}</span>
       <button onClick={increment}>+</button>
     </div>
   );
 }
 
-// Object state
+// Object state: always spread to avoid overwriting other fields
 function ProfileForm() {
   const [form, setForm] = useState({ name: '', email: '', bio: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // ✅ Spread to avoid overwriting other fields
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
@@ -1608,7 +1368,9 @@ function ProfileForm() {
 }
 ```
 
-**`useEffect` — side effects:**
+### useEffect — Side Effects
+
+Use `useEffect` for things that happen outside of rendering: fetching data, setting up subscriptions, or touching the DOM directly.
 
 ```jsx
 import { useState, useEffect } from 'react';
@@ -1619,7 +1381,6 @@ function UserProfile({ userId }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Setup: runs after render
     let cancelled = false;
 
     async function fetchUser() {
@@ -1637,11 +1398,11 @@ function UserProfile({ userId }) {
 
     fetchUser();
 
-    // Cleanup: runs before next effect or on unmount
+    // Cleanup: runs when userId changes or the component is removed
     return () => {
-      cancelled = true;  // Prevent state update on unmounted component
+      cancelled = true;
     };
-  }, [userId]); // Dependency array — re-runs when userId changes
+  }, [userId]);  // Re-runs whenever userId changes
 
   if (loading) return <Skeleton />;
   if (error) return <ErrorMessage message={error} />;
@@ -1649,73 +1410,64 @@ function UserProfile({ userId }) {
 
   return <div>{user.name}</div>;
 }
-
-// ✅ Effect dependency cheatsheet
-useEffect(() => { ... });          // Runs after every render — rarely what you want
-useEffect(() => { ... }, []);      // Runs once after mount
-useEffect(() => { ... }, [id]);    // Runs after mount + when id changes
 ```
 
-**`useCallback` & `useMemo` — memoization:**
+Dependency array quick reference:
+
+```js
+useEffect(() => { ... });          // Runs after every render — rarely what you want
+useEffect(() => { ... }, []);      // Runs once after the component mounts
+useEffect(() => { ... }, [id]);    // Runs after mount and whenever id changes
+```
+
+### useCallback and useMemo — Memoization
+
+These hooks prevent unnecessary recalculations and re-renders. Use them when you have measured a performance problem, not as a default habit.
 
 ```jsx
-import { useState, useCallback, useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 
-function ExpensiveComponent({ items, onSelect }) {
-  // ✅ useMemo: memoize expensive computations
-  const sortedItems = useMemo(
-    () => [...items].sort((a, b) => a.name.localeCompare(b.name)),
-    [items]  // Recomputes only when items changes
+function ProductList({ products, onSelect }) {
+  // useMemo: the sorted result is only recalculated when products changes
+  const sortedProducts = useMemo(
+    () => [...products].sort((a, b) => a.name.localeCompare(b.name)),
+    [products]
   );
 
-  const total = useMemo(
-    () => items.reduce((sum, item) => sum + item.price, 0),
-    [items]
+  // useCallback: gives onSelect a stable reference
+  // Without this, a new function is created on every render,
+  // causing memoized children to re-render unnecessarily
+  const handleSelect = useCallback((id) => {
+    onSelect(id);
+  }, [onSelect]);
+
+  return (
+    <ul>
+      {sortedProducts.map(p => (
+        <ProductItem key={p.id} product={p} onSelect={handleSelect} />
+      ))}
+    </ul>
   );
-
-  return <div>Total: {total}</div>;
-}
-
-function Parent() {
-  const [filter, setFilter] = useState('');
-
-  // ✅ useCallback: stable function reference for child props
-  // Without this, a new function is created on every Parent render,
-  // causing Child to re-render even when logic is the same
-  const handleSelect = useCallback((item) => {
-    console.log('Selected:', item);
-  }, []); // Empty: function never changes
-
-  return <ExpensiveComponent onSelect={handleSelect} />;
 }
 ```
 
-**`useRef` — mutable references without re-render:**
+### useRef — DOM References and Mutable Values
 
 ```jsx
 import { useRef, useEffect } from 'react';
 
-function FocusInput() {
+// Accessing a DOM element directly
+function SearchInput() {
   const inputRef = useRef(null);
 
-  // Focus on mount
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
-  return <input ref={inputRef} placeholder="Auto-focused" />;
+  return <input ref={inputRef} placeholder="Search..." />;
 }
 
-// Storing previous value
-function usePrevious(value) {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-}
-
-// Storing mutable value without triggering re-render
+// Storing a mutable value without triggering a re-render
 function Timer() {
   const intervalRef = useRef(null);
 
@@ -1723,9 +1475,7 @@ function Timer() {
     intervalRef.current = setInterval(() => console.log('tick'), 1000);
   };
 
-  const stop = () => {
-    clearInterval(intervalRef.current);
-  };
+  const stop = () => clearInterval(intervalRef.current);
 
   useEffect(() => () => clearInterval(intervalRef.current), []);
 
@@ -1738,37 +1488,12 @@ function Timer() {
 }
 ```
 
-**Custom Hooks:**
+### Custom Hooks
+
+Custom hooks let you extract and reuse stateful logic between components. Any function that starts with `use` and calls other hooks is a custom hook.
 
 ```jsx
-// Custom hooks encapsulate reusable stateful logic
-// Convention: name starts with "use"
-
-// useLocalStorage — persists state to localStorage
-function useLocalStorage(key, initialValue) {
-  const [storedValue, setStoredValue] = useState(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch {
-      return initialValue;
-    }
-  });
-
-  const setValue = useCallback((value) => {
-    try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
-      console.error(`Error saving to localStorage key "${key}":`, error);
-    }
-  }, [key, storedValue]);
-
-  return [storedValue, setValue];
-}
-
-// useDebounce — delays updating a value
+// useDebounce: delays updating a value until the user stops typing
 function useDebounce(value, delay = 300) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -1780,161 +1505,80 @@ function useDebounce(value, delay = 300) {
   return debouncedValue;
 }
 
-// useFetch — generic data fetching hook
-function useFetch(url) {
-  const [state, setState] = useState({ data: null, loading: true, error: null });
+// useLocalStorage: persists state to the browser's localStorage
+function useLocalStorage(key, initialValue) {
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch {
+      return initialValue;
+    }
+  });
 
-  useEffect(() => {
-    if (!url) return;
+  const setValue = (value) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-    let cancelled = false;
-    setState(prev => ({ ...prev, loading: true, error: null }));
-
-    fetch(url)
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then(data => {
-        if (!cancelled) setState({ data, loading: false, error: null });
-      })
-      .catch(error => {
-        if (!cancelled) setState({ data: null, loading: false, error: error.message });
-      });
-
-    return () => { cancelled = true; };
-  }, [url]);
-
-  return state;
+  return [storedValue, setValue];
 }
 
 // Usage
-function SearchResults() {
+function SearchPage() {
   const [query, setQuery] = useState('');
   const debouncedQuery = useDebounce(query, 400);
-  const { data, loading, error } = useFetch(
-    debouncedQuery ? `/api/search?q=${debouncedQuery}` : null
-  );
 
-  return (
-    <div>
-      <input value={query} onChange={e => setQuery(e.target.value)} />
-      {loading && <Spinner />}
-      {error && <ErrorBanner message={error} />}
-      {data && <ResultsList results={data} />}
-    </div>
-  );
+  useEffect(() => {
+    if (debouncedQuery) fetchResults(debouncedQuery);
+  }, [debouncedQuery]);
+
+  return <input value={query} onChange={e => setQuery(e.target.value)} />;
 }
 ```
 
 ### Component Architecture
 
-**Component Classification:**
+Think about components in three layers:
 
 ```
 UI Components (Presentational)
-  └── Pure components — receive props, render UI, emit events
-  └── No business logic, no API calls
-  └── Highly reusable
+  Receive props and render UI. No API calls. No business logic.
+  Reusable by design.
+  Examples: Button, Card, Modal, Badge, Avatar.
 
-Feature Components (Container/Smart)
-  └── Own state and side effects
-  └── Fetch data, manage complex interactions
-  └── Compose UI components
+Feature Components
+  Own state and side effects. Fetch data and handle interactions.
+  Compose UI components together.
+  Examples: UserProfileCard, LoginForm, SearchResults.
 
 Page Components
-  └── Route-level components
-  └── Orchestrate feature components
-  └── Handle route params
-```
-
-**Compound Components Pattern:**
-
-```jsx
-// Flexible, composable API for complex components
-const Tabs = ({ children, defaultTab }) => {
-  const [activeTab, setActiveTab] = useState(defaultTab);
-
-  return (
-    <TabContext.Provider value={{ activeTab, setActiveTab }}>
-      <div className="tabs">{children}</div>
-    </TabContext.Provider>
-  );
-};
-
-Tabs.List = function TabList({ children }) {
-  return <div className="tabs__list" role="tablist">{children}</div>;
-};
-
-Tabs.Tab = function Tab({ id, children }) {
-  const { activeTab, setActiveTab } = useContext(TabContext);
-  return (
-    <button
-      role="tab"
-      aria-selected={activeTab === id}
-      onClick={() => setActiveTab(id)}
-      className={activeTab === id ? 'tabs__tab--active' : 'tabs__tab'}
-    >
-      {children}
-    </button>
-  );
-};
-
-Tabs.Panel = function TabPanel({ id, children }) {
-  const { activeTab } = useContext(TabContext);
-  if (activeTab !== id) return null;
-  return <div role="tabpanel" className="tabs__panel">{children}</div>;
-};
-
-// Usage — expressive and flexible
-<Tabs defaultTab="overview">
-  <Tabs.List>
-    <Tabs.Tab id="overview">Overview</Tabs.Tab>
-    <Tabs.Tab id="analytics">Analytics</Tabs.Tab>
-    <Tabs.Tab id="settings">Settings</Tabs.Tab>
-  </Tabs.List>
-  <Tabs.Panel id="overview"><OverviewPanel /></Tabs.Panel>
-  <Tabs.Panel id="analytics"><AnalyticsPanel /></Tabs.Panel>
-  <Tabs.Panel id="settings"><SettingsPanel /></Tabs.Panel>
-</Tabs>
-```
-
-**Render Props Pattern:**
-
-```jsx
-function DataProvider({ url, render }) {
-  const { data, loading, error } = useFetch(url);
-  return render({ data, loading, error });
-}
-
-// Usage
-<DataProvider
-  url="/api/users"
-  render={({ data, loading, error }) => (
-    loading ? <Spinner /> :
-    error   ? <Error /> :
-              <UserList users={data} />
-  )}
-/>
+  Route-level components. Orchestrate feature components.
+  Handle URL parameters and routing logic.
+  Examples: DashboardPage, SettingsPage, UserProfilePage.
 ```
 
 ### State Management
 
-**Hierarchy of state solutions (choose the simplest that works):**
+Choose the simplest tool that solves the problem:
 
 ```
-1. Local useState          — One component's private data
-2. Lifted state            — Shared between sibling components
-3. React Context           — Global UI state (theme, auth, locale)
-4. Zustand / Jotai         — Client state with actions, no Redux boilerplate
-5. Redux Toolkit           — Large apps, complex state logic, time-travel debugging
-6. React Query / SWR       — Server state (caching, refetching, loading states)
+Local useState         One component's private data
+Lifted state           Shared between siblings via a common parent
+React Context          Global UI state: theme, auth, locale
+Zustand or Jotai       Client state with actions, minimal boilerplate
+Redux Toolkit          Large apps with complex, interconnected state
+React Query or SWR     Server state: caching, background refetching, loading states
 ```
 
-**Context (for truly global state):**
+**React Context for global state:**
 
 ```jsx
-// contexts/AuthContext.jsx
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
@@ -1942,22 +1586,21 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged((user) => {
+    authService.getSession().then((user) => {
       setUser(user);
       setLoading(false);
     });
-    return unsubscribe;
   }, []);
 
-  const login = useCallback(async (credentials) => {
+  const login = async (credentials) => {
     const user = await authService.login(credentials);
     setUser(user);
-  }, []);
+  };
 
-  const logout = useCallback(async () => {
+  const logout = async () => {
     await authService.logout();
     setUser(null);
-  }, []);
+  };
 
   if (loading) return <AppLoadingScreen />;
 
@@ -1968,33 +1611,21 @@ export function AuthProvider({ children }) {
   );
 }
 
-// Hook for consuming context
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) throw new Error('useAuth must be used inside AuthProvider');
   return context;
 }
-
-// Usage
-function Header() {
-  const { user, logout } = useAuth();
-  return (
-    <header>
-      <span>Welcome, {user?.name}</span>
-      <button onClick={logout}>Sign Out</button>
-    </header>
-  );
-}
 ```
 
-**Zustand (recommended for client state):**
+**Zustand for client state:**
 
 ```jsx
 import { create } from 'zustand';
 
 const useCartStore = create((set, get) => ({
   items: [],
-  
+
   addItem: (product) => set((state) => ({
     items: [...state.items, { ...product, quantity: 1 }],
   })),
@@ -2003,145 +1634,53 @@ const useCartStore = create((set, get) => ({
     items: state.items.filter(item => item.id !== productId),
   })),
 
-  updateQuantity: (productId, quantity) => set((state) => ({
-    items: state.items.map(item =>
-      item.id === productId ? { ...item, quantity } : item
-    ),
-  })),
-
   clearCart: () => set({ items: [] }),
 
-  // Derived state (computed)
-  get totalItems() { return get().items.reduce((sum, i) => sum + i.quantity, 0); },
-  get totalPrice() { return get().items.reduce((sum, i) => sum + i.price * i.quantity, 0); },
+  get totalItems() {
+    return get().items.reduce((sum, i) => sum + i.quantity, 0);
+  },
 }));
-
-// Usage in component
-function CartIcon() {
-  const totalItems = useCartStore(state => state.totalItems);
-  return <span>{totalItems}</span>;
-}
 ```
 
-**React Query (recommended for server state):**
+**React Query for server state:**
 
 ```jsx
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 
-// Fetch + cache + loading/error states
 function UserProfile({ userId }) {
   const { data: user, isLoading, isError } = useQuery({
     queryKey: ['user', userId],
     queryFn: () => apiClient.get(`/users/${userId}`),
-    staleTime: 5 * 60 * 1000, // Consider fresh for 5 minutes
+    staleTime: 5 * 60 * 1000,  // Data stays fresh for 5 minutes
   });
 
   if (isLoading) return <Skeleton />;
   if (isError) return <ErrorState />;
+
   return <div>{user.name}</div>;
 }
-
-// Mutations with optimistic updates
-function EditProfile({ user }) {
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation({
-    mutationFn: (updates) => apiClient.put(`/users/${user.id}`, updates),
-    onMutate: async (updates) => {
-      // Optimistically update the cache
-      await queryClient.cancelQueries(['user', user.id]);
-      const previous = queryClient.getQueryData(['user', user.id]);
-      queryClient.setQueryData(['user', user.id], { ...user, ...updates });
-      return { previous };
-    },
-    onError: (err, vars, context) => {
-      // Roll back on error
-      queryClient.setQueryData(['user', user.id], context.previous);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries(['user', user.id]);
-    },
-  });
-}
-```
-
-### API Integration
-
-```jsx
-// services/userService.js — centralize all API calls for a domain
-export const userService = {
-  getUser: (id) => apiClient.get(`/users/${id}`),
-  
-  updateUser: (id, data) => apiClient.put(`/users/${id}`, data),
-  
-  uploadAvatar: async (id, file) => {
-    const formData = new FormData();
-    formData.append('avatar', file);
-    return apiClient.request(`/users/${id}/avatar`, {
-      method: 'POST',
-      body: formData,
-      headers: {}, // Let browser set multipart Content-Type
-    });
-  },
-  
-  searchUsers: (query, filters = {}) => {
-    const params = new URLSearchParams({ q: query, ...filters });
-    return apiClient.get(`/users/search?${params}`);
-  },
-};
 ```
 
 ### React Performance
 
 ```jsx
-// 1. React.memo — prevent re-render when props haven't changed
-const UserCard = React.memo(function UserCard({ user, onSelect }) {
-  return (
-    <div onClick={() => onSelect(user.id)}>
-      {user.name}
-    </div>
-  );
-}, (prevProps, nextProps) => {
-  // Custom comparison (optional) — return true to skip re-render
-  return prevProps.user.id === nextProps.user.id;
+// React.memo: skip re-rendering a component when its props have not changed
+const UserCard = React.memo(function UserCard({ user }) {
+  return <div>{user.name}</div>;
 });
 
-// 2. Code splitting — load components on demand
+// Code splitting: load heavy components only when the user navigates to them
 import { lazy, Suspense } from 'react';
 
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
-const Analytics = lazy(() => import('./pages/Analytics'));
 
 function App() {
   return (
     <Suspense fallback={<PageSkeleton />}>
       <Routes>
         <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/analytics" element={<Analytics />} />
       </Routes>
     </Suspense>
-  );
-}
-
-// 3. Virtualization for large lists
-import { FixedSizeList } from 'react-window';
-
-function VirtualUserList({ users }) {
-  const Row = ({ index, style }) => (
-    <div style={style}>
-      <UserCard user={users[index]} />
-    </div>
-  );
-
-  return (
-    <FixedSizeList
-      height={600}
-      itemCount={users.length}
-      itemSize={80}
-      width="100%"
-    >
-      {Row}
-    </FixedSizeList>
   );
 }
 ```
@@ -2149,29 +1688,20 @@ function VirtualUserList({ users }) {
 ### React Best Practices
 
 ```jsx
-// ✅ Key prop: use stable IDs, never array index for dynamic lists
-// ❌ Bad — index causes wrong re-renders during reordering/filtering
+// Use stable IDs as keys, never array indexes
+// Bad: causes incorrect behavior when the list is reordered or filtered
 {items.map((item, index) => <Item key={index} {...item} />)}
 
-// ✅ Good
+// Good
 {items.map(item => <Item key={item.id} {...item} />)}
 
-// ✅ Keep components small and focused
-// A component should have one job. If you need to scroll to read it, split it.
+// Derive values from state instead of duplicating state
 
-// ✅ Lift state to the lowest common ancestor
-// Don't lift state all the way to root if only two siblings need it
-
-// ✅ Derive state — don't duplicate it
-// ❌ Bad: derived state that can get out of sync
 const [items, setItems] = useState([]);
-const [count, setCount] = useState(0); // Derived — never use useState for this!
+const count = items.length;                  // Derived — no separate useState needed
+const activeItems = items.filter(i => i.active);  // Derived
 
-// ✅ Good: derive from single source of truth
-const [items, setItems] = useState([]);
-const count = items.length; // Derived directly
-
-// ✅ Render early returns for loading/error states
+// Handle all states clearly at the top of the component
 function UserPage({ userId }) {
   const { data: user, isLoading, isError } = useUser(userId);
 
@@ -2179,28 +1709,28 @@ function UserPage({ userId }) {
   if (isError)   return <ErrorPage />;
   if (!user)     return <NotFound />;
 
-  return <UserDetail user={user} />;  // Clean, focused happy path
+  return <UserDetail user={user} />;
 }
 ```
 
 ---
 
-## 🚀 Frontend Performance Optimization
+## Frontend Performance Optimization
 
-Performance is not a feature — it is a discipline.
+Performance is a feature. A slow application loses users regardless of how good it looks.
 
 ### Core Web Vitals Targets
 
-| Metric | Good | Needs Work | Poor |
-|---|---|---|---|
-| **LCP** (Largest Contentful Paint) | ≤ 2.5s | 2.5–4s | > 4s |
-| **INP** (Interaction to Next Paint) | ≤ 200ms | 200–500ms | > 500ms |
-| **CLS** (Cumulative Layout Shift) | ≤ 0.1 | 0.1–0.25 | > 0.25 |
+| Metric | Target | What It Measures |
+|---|---|---|
+| LCP (Largest Contentful Paint) | Under 2.5 seconds | How quickly the main content appears |
+| INP (Interaction to Next Paint) | Under 200ms | How quickly the page responds to input |
+| CLS (Cumulative Layout Shift) | Under 0.1 | How much the layout shifts unexpectedly |
 
 ### Bundle Optimization
 
 ```js
-// vite.config.js — code splitting strategy
+// vite.config.js
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -2211,11 +1741,9 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
           query: ['@tanstack/react-query'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
         },
       },
     },
-    // Analyze bundle with: pnpm build && pnpx vite-bundle-analyzer
   },
 });
 ```
@@ -2223,19 +1751,19 @@ export default defineConfig({
 ### Image Optimization
 
 ```html
-<!-- ✅ Modern format with fallback -->
+<!-- Serve modern formats with a JPEG fallback for older browsers -->
 <picture>
   <source srcset="hero.avif" type="image/avif" />
   <source srcset="hero.webp" type="image/webp" />
-  <img src="hero.jpg" alt="Hero image" width="1200" height="600" loading="eager" />
+  <img src="hero.jpg" alt="Hero" width="1200" height="600" loading="eager" />
 </picture>
 
-<!-- ✅ Responsive images with srcset -->
+<!-- Responsive images: load the right size for the screen -->
 <img
   src="card.jpg"
   srcset="card-400.jpg 400w, card-800.jpg 800w, card-1200.jpg 1200w"
   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
-  alt="Card image"
+  alt="Product"
   loading="lazy"
   decoding="async"
 />
@@ -2245,201 +1773,123 @@ export default defineConfig({
 
 ```html
 <head>
-  <!-- DNS resolution in advance -->
-  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-  
-  <!-- Pre-establish connection (DNS + TCP + TLS) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-  <!-- Preload critical resources -->
+  <!-- Pre-establish connection to the API domain -->
+  <link rel="preconnect" href="https://api.sandlipoasis.com" />
+
+  <!-- Preload a font file so it does not delay text rendering -->
   <link rel="preload" href="/fonts/brand.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/images/hero.webp" as="image" />
-  
-  <!-- Prefetch future navigations -->
+
+  <!-- Prefetch the next page the user is likely to visit -->
   <link rel="prefetch" href="/dashboard" />
 </head>
-```
-
-### JavaScript Performance
-
-```js
-// ✅ Intersection Observer for lazy operations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      loadContent(entry.target);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { rootMargin: '200px' });
-
-document.querySelectorAll('[data-lazy]').forEach(el => observer.observe(el));
-
-// ✅ Web Workers for CPU-intensive tasks (never block the main thread)
-// worker.js
-self.addEventListener('message', ({ data }) => {
-  const result = heavyComputation(data);
-  self.postMessage(result);
-});
-
-// main.js
-const worker = new Worker('/worker.js');
-worker.postMessage(largeDataset);
-worker.onmessage = ({ data }) => updateChart(data);
-
-// ✅ RequestIdleCallback for non-critical work
-requestIdleCallback(() => {
-  sendAnalyticsEvent({ type: 'page_view', page: location.pathname });
-});
 ```
 
 ### CSS Performance
 
 ```css
-/* ✅ Use transform and opacity for animations — GPU-composited */
-/* ❌ Causes layout recalculation */
-.bad-animation { transition: width 300ms; }
+/* Use transform and opacity for animations — they run on the GPU
+   and do not trigger layout recalculations */
 
-/* ✅ GPU-accelerated */
-.good-animation { transition: transform 300ms; }
+/* Bad: recalculates layout on every animation frame */
+.element { transition: width 300ms; }
 
-/* ✅ Contain paint to a layer */
-.complex-component {
-  will-change: transform;   /* Use sparingly — only when truly needed */
-  contain: layout style;    /* Scope layout recalculation */
-}
+/* Good: composited on the GPU */
+.element { transition: transform 300ms; }
 
-/* ✅ Font loading strategy */
+/* Show text immediately with the fallback font,
+   then swap to the loaded custom font */
 @font-face {
   font-family: 'Brand';
   src: url('/fonts/brand.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;   /* Show fallback immediately, swap when loaded */
+  font-display: swap;
 }
 ```
 
 ---
 
-## 🔒 Security Best Practices
+## Security Best Practices
 
-Security is a shared responsibility. Frontend engineers are the last line of defense for many attack vectors.
+### XSS Prevention
 
-### XSS (Cross-Site Scripting) Prevention
+React's JSX automatically escapes content, so rendering user data in JSX is safe by default. The main danger zone is `dangerouslySetInnerHTML`.
 
 ```jsx
-// ✅ React's JSX auto-escapes content — this is safe
+// Safe by default — React escapes this automatically
 function Comment({ text }) {
-  return <p>{text}</p>;  // Safe: escaped by React
+  return <p>{text}</p>;
 }
 
-// ❌ DANGER: dangerouslySetInnerHTML — only use with sanitized content
+// Dangerous — always sanitize HTML before rendering it
 import DOMPurify from 'dompurify';
 
 function RichContent({ htmlContent }) {
-  // Sanitize BEFORE rendering
   const clean = DOMPurify.sanitize(htmlContent, {
     ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'ul', 'li'],
-    ALLOWED_ATTR: ['href', 'target'],
+    ALLOWED_ATTR: ['href'],
   });
-
   return <div dangerouslySetInnerHTML={{ __html: clean }} />;
 }
 
-// ✅ Validate URLs before using as href
+// Validate URLs before using them in href attributes
 function SafeLink({ url, children }) {
-  const isSafeUrl = /^https?:\/\//i.test(url) || url.startsWith('/');
-  if (!isSafeUrl) return <span>{children}</span>;
+  const isSafe = /^https?:\/\//i.test(url) || url.startsWith('/');
+  if (!isSafe) return <span>{children}</span>;
   return <a href={url}>{children}</a>;
 }
 ```
 
-### Authentication & Tokens
+### Secrets and Environment Variables
 
-```js
-// ✅ Store tokens in httpOnly cookies (backend sets these)
-// Never localStorage for sensitive tokens if possible
+Never commit secrets, API keys, or credentials to source control.
 
-// If you must use localStorage (SPAs without backend proxy):
-// - Use short-lived access tokens
-// - Implement refresh token rotation
-// - Clear on logout
+```bash
+# .env.example — commit this; it documents what variables the app needs
+VITE_API_BASE_URL=https://api.sandlipoasis.com
+VITE_APP_ENV=production
 
-// ✅ Logout completely
-function logout() {
-  localStorage.removeItem('access_token');
-  sessionStorage.clear();
-  // Revoke token on server
-  await apiClient.post('/auth/logout');
-  // Clear React Query cache
-  queryClient.clear();
-  // Hard redirect (clears React state entirely)
-  window.location.href = '/login';
-}
-```
-
-### Content Security Policy
-
-```html
-<!-- Add via HTTP header (preferred) or meta tag -->
-<meta http-equiv="Content-Security-Policy"
-  content="
-    default-src 'self';
-    script-src 'self' 'nonce-{RANDOM_NONCE}';
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' data: https:;
-    connect-src 'self' https://api.sandlipoasis.com;
-    frame-ancestors 'none';
-  "
-/>
+# .env.local — never commit this file; add it to .gitignore
+VITE_API_BASE_URL=http://localhost:3001
 ```
 
 ### Security Checklist
 
 ```
-☐ Never store sensitive data (passwords, tokens) in localStorage unencrypted
-☐ All external URLs are validated before being used in href/src
-☐ dangerouslySetInnerHTML always paired with DOMPurify sanitization
-☐ API keys are in environment variables (.env), never in source code
-☐ Dependencies audited: pnpm audit (run weekly, fix critical vulnerabilities)
-☐ HTTPS enforced in production (Strict-Transport-Security header)
-☐ User input is validated on both client and server
-☐ Sensitive forms have autocomplete="off" where appropriate
-☐ No sensitive data logged to console.log in production
-☐ Third-party scripts are audited and loaded from trusted sources
+- Sensitive data is never stored in plain text
+- User-generated HTML is sanitized with DOMPurify before rendering
+- External URLs are validated before being used in href or src
+- API keys are stored in environment variables, never in source code
+- Dependencies are audited regularly: pnpm audit
+- No sensitive data is logged to the console in production builds
+- HTTPS is enforced in all production environments
 ```
 
 ---
 
-## 🧪 Testing
+## Testing
 
-### Testing Philosophy
+### The Testing Pyramid
 
 ```
-Testing Pyramid:
-                ┌──────────┐
-                │  E2E     │  ← Few, slow, high confidence (Playwright)
-                │ Tests    │
-               ┌┴──────────┴┐
-               │Integration │  ← Some, tests component interaction
-               │  Tests     │
-              ┌┴────────────┴┐
-              │  Unit Tests  │  ← Many, fast, focused (Vitest + RTL)
-              └──────────────┘
+       E2E Tests (Playwright)
+  ─────────────────────────────────
+      Integration Tests
+  ─────────────────────────────────────
+         Unit Tests (Vitest + React Testing Library)
 ```
 
-### Unit & Integration Testing (Vitest + React Testing Library)
+Write many fast unit tests, fewer integration tests, and a small number of E2E tests covering your most critical user journeys.
+
+### Unit and Component Testing
 
 ```jsx
 // Button.test.jsx
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 import Button from './Button';
 
 describe('Button', () => {
-  it('renders with correct label', () => {
+  it('renders its label', () => {
     render(<Button>Click me</Button>);
     expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument();
   });
@@ -2454,34 +1904,25 @@ describe('Button', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('is disabled when disabled prop is true', () => {
+  it('is disabled when the disabled prop is set', () => {
     render(<Button disabled>Submit</Button>);
     expect(screen.getByRole('button')).toBeDisabled();
-  });
-
-  it('shows loading state', () => {
-    render(<Button loading>Submit</Button>);
-    expect(screen.getByRole('button')).toHaveAttribute('aria-busy', 'true');
-    expect(screen.getByText('Submit')).toBeInTheDocument();
-    expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
 });
 ```
 
-**Testing async components:**
+Testing async components with MSW (Mock Service Worker):
 
 ```jsx
-// UserProfile.test.jsx
 import { render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import UserProfile from './UserProfile';
 
-// Mock the API with MSW
 const server = setupServer(
-  rest.get('/api/users/1', (req, res, ctx) => {
-    return res(ctx.json({ id: 1, name: 'Amara', role: 'Senior Engineer' }));
-  })
+  rest.get('/api/users/1', (req, res, ctx) =>
+    res(ctx.json({ id: 1, name: 'Amara', role: 'Senior Engineer' }))
+  )
 );
 
 beforeAll(() => server.listen());
@@ -2489,25 +1930,18 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 describe('UserProfile', () => {
-  it('shows loading skeleton initially', () => {
+  it('renders user data after fetching', async () => {
     render(<UserProfile userId={1} />);
-    expect(screen.getByTestId('skeleton')).toBeInTheDocument();
-  });
 
-  it('renders user data after fetch', async () => {
-    render(<UserProfile userId={1} />);
-    
     await waitFor(() => {
       expect(screen.getByText('Amara')).toBeInTheDocument();
-      expect(screen.getByText('Senior Engineer')).toBeInTheDocument();
     });
   });
 
-  it('shows error state on API failure', async () => {
+  it('shows an error state when the API fails', async () => {
     server.use(
       rest.get('/api/users/1', (req, res, ctx) => res(ctx.status(500)))
     );
-
     render(<UserProfile userId={1} />);
 
     await waitFor(() => {
@@ -2517,163 +1951,120 @@ describe('UserProfile', () => {
 });
 ```
 
-### E2E Testing (Playwright)
+### E2E Testing with Playwright
 
 ```js
 // tests/e2e/auth.spec.js
 import { test, expect } from '@playwright/test';
 
-test.describe('Authentication', () => {
-  test('user can log in with valid credentials', async ({ page }) => {
-    await page.goto('/login');
+test('user can log in with valid credentials', async ({ page }) => {
+  await page.goto('/login');
 
-    await page.getByLabel('Email address').fill('amara@sandlipoasis.com');
-    await page.getByLabel('Password').fill('securepassword');
-    await page.getByRole('button', { name: /sign in/i }).click();
+  await page.getByLabel('Email address').fill('amara@sandlipoasis.com');
+  await page.getByLabel('Password').fill('securepassword');
+  await page.getByRole('button', { name: /sign in/i }).click();
 
-    await expect(page).toHaveURL('/dashboard');
-    await expect(page.getByText('Welcome back, Amara')).toBeVisible();
-  });
+  await expect(page).toHaveURL('/dashboard');
+  await expect(page.getByText('Welcome back, Amara')).toBeVisible();
+});
 
-  test('shows error for invalid credentials', async ({ page }) => {
-    await page.goto('/login');
+test('shows an error for invalid credentials', async ({ page }) => {
+  await page.goto('/login');
 
-    await page.getByLabel('Email address').fill('wrong@example.com');
-    await page.getByLabel('Password').fill('wrongpassword');
-    await page.getByRole('button', { name: /sign in/i }).click();
+  await page.getByLabel('Email address').fill('wrong@example.com');
+  await page.getByLabel('Password').fill('wrongpassword');
+  await page.getByRole('button', { name: /sign in/i }).click();
 
-    await expect(page.getByRole('alert')).toContainText('Invalid email or password');
-    await expect(page).toHaveURL('/login');
-  });
+  await expect(page.getByRole('alert')).toContainText('Invalid email or password');
 });
 ```
 
-### Testing Checklist
+### Coverage Targets
 
-```
-Unit Tests
-☐ All utility functions are unit tested
-☐ Custom hooks are tested with renderHook
-☐ Edge cases and error paths are covered
-
-Component Tests
-☐ Components render correctly with required props
-☐ User interactions (click, type, submit) are tested
-☐ Loading, error, and empty states are tested
-☐ Accessibility is verified with jest-axe
-
-E2E Tests
-☐ Critical user journeys are covered (login, checkout, etc.)
-☐ Tests run against a staging environment
-☐ Tests are part of CI pipeline
-
-Coverage Targets
-☐ Utilities: 95%+
-☐ Components: 80%+
-☐ Integration: key flows covered
-```
+| Area | Target |
+|---|---|
+| Utility functions | 95% and above |
+| UI components | 80% and above |
+| Critical user flows | Covered by E2E tests |
 
 ---
 
-## 🔍 Debugging Workflows
+## Debugging Workflows
 
-### Browser DevTools Mastery
+### Browser DevTools Panels
 
+**Elements panel** — Inspect and live-edit HTML and CSS. Test responsive layouts using device emulation. Check the Accessibility tab to audit the accessibility tree.
+
+**Console panel:**
+
+```js
+console.table(arrayOfObjects)   // Renders array data as a readable table
+console.group('Label')          // Group related log messages together
+console.time('label')           // Start a performance timer
+console.timeEnd('label')        // Stop the timer and print elapsed time
+console.trace()                 // Print the current call stack
+$0                              // Reference the last element clicked in Elements
 ```
-Elements Panel
-  → Inspect and live-edit HTML/CSS
-  → Test responsive views (device emulation)
-  → Audit accessibility (Accessibility tab)
-  → Computed styles and box model visualization
 
-Console
-  → console.table(arrayOfObjects)  — tabular view of data
-  → console.group('Label') / console.groupEnd()  — organize logs
-  → console.time('label') / console.timeEnd('label')  — timing
-  → console.trace()  — call stack trace
-  → $0  — reference last clicked element in Elements
-  → queryObjects(ClassName)  — find all instances of a class
+**Network panel** — Filter by Fetch/XHR to see API calls. Throttle to simulate a slow connection. Right-click any request and choose "Copy as cURL" to reproduce it in a terminal.
 
-Network Panel
-  → Filter by type: XHR/Fetch for API calls
-  → Throttle to simulate slow connections (3G, offline)
-  → Inspect request/response headers and body
-  → Right-click → "Copy as cURL" to reproduce in terminal
+**Performance panel** — Record an interaction and identify long tasks (anything over 50ms blocks the main thread). Find unnecessary layout recalculations and slow rendering.
 
-Performance Panel
-  → Record page interactions
-  → Identify long tasks (>50ms) in the flame chart
-  → Find layout thrash and style recalculations
-  → Memory leaks
-
-Application Panel
-  → Inspect localStorage, sessionStorage, cookies
-  → Clear site data for a clean state
-  → Service Workers and cache inspection
-```
+**Application panel** — Inspect localStorage, sessionStorage, and cookies. Clear site data for a clean state.
 
 ### React Developer Tools
 
-```
-Components Tab
-  → Inspect props and state of any component
-  → Trigger re-renders to test behavior
-  → Find what caused a re-render (highlight updates)
+Install the React Developer Tools browser extension. It adds two panels:
 
-Profiler Tab
-  → Record an interaction
-  → See which components re-rendered and why
-  → Identify rendering bottlenecks
-  → Flame chart: time spent in each component
-```
+- **Components** — Inspect props and state of any mounted component. Highlight updates to visualize what is re-rendering.
+- **Profiler** — Record an interaction and see which components re-rendered, how long each took, and what caused the render.
 
-### Debugging Checklist
+### Before Asking for Help
 
 ```
-Before asking for help:
-☐ Reproduce the bug in isolation (minimal repro)
-☐ Check the browser console for errors
-☐ Verify the correct data is being passed (console.log, DevTools)
-☐ Check the Network tab for failed API requests
-☐ Confirm the component's state matches expectations
-☐ Read the error message in full — don't just scan it
-☐ Check git blame — when did this code last change?
-☐ Search the codebase for related error text
+1. Can you reproduce the bug consistently? What are the exact steps?
+2. Check the browser console for error messages
+3. Verify the data is what you expect — add a temporary log or use DevTools
+4. Check the Network tab for failed or unexpected API responses
+5. Read the error message in full — do not just scan the first line
+6. Check git history — when did this code last change?
+7. Try to isolate the problem — can you reproduce it in a smaller example?
 ```
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Environment Strategy
 
 ```
-local       → Developer machine (localhost)
-development → Feature branch deployments (Vercel/Netlify preview)
-staging     → Pre-production mirror (manual QA + automated tests)
-production  → Live user traffic (auto-deploy from main)
+local         Your development machine (localhost)
+development   Automatic preview deployments for each pull request
+staging       Pre-production environment for QA and automated testing
+production    Live user traffic, deployed automatically from main
 ```
 
 ### Environment Variables
 
 ```bash
-# .env.example — commit this; document all vars
+# .env.example — commit this file to document all required variables
 VITE_API_BASE_URL=https://api.sandlipoasis.com
 VITE_APP_ENV=production
 VITE_SENTRY_DSN=
-VITE_ANALYTICS_KEY=
 
-# .env.local — never commit; personal overrides
+# .env.local — never commit this file
 VITE_API_BASE_URL=http://localhost:3001
 ```
 
-```js
-// config/env.js — centralize and validate at startup
-const requiredVars = ['VITE_API_BASE_URL'];
+Validate required variables at startup:
 
-for (const varName of requiredVars) {
-  if (!import.meta.env[varName]) {
-    throw new Error(`Missing required environment variable: ${varName}`);
+```js
+// src/config/env.js
+const required = ['VITE_API_BASE_URL'];
+
+for (const name of required) {
+  if (!import.meta.env[name]) {
+    throw new Error(`Missing required environment variable: ${name}`);
   }
 }
 
@@ -2684,7 +2075,7 @@ export const config = {
 };
 ```
 
-### CI/CD Pipeline (GitHub Actions)
+### CI/CD Pipeline
 
 ```yaml
 # .github/workflows/ci.yml
@@ -2710,9 +2101,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Type check
-        run: pnpm tsc --noEmit
-
       - name: Lint
         run: pnpm lint
 
@@ -2729,25 +2117,21 @@ jobs:
 ### Deployment Checklist
 
 ```
-Pre-deploy
-☐ All tests passing in CI
-☐ Bundle size reviewed (no unexpected increases)
-☐ Core Web Vitals checked on staging
-☐ Accessibility audit run (Lighthouse)
-☐ Security headers configured
-☐ Environment variables set in target environment
-☐ Feature flags configured correctly
+Before deploying
+  - All tests passing in CI
+  - Bundle size reviewed — no unexpected increases
+  - Lighthouse audit run on staging (target: Performance 90+, Accessibility 100)
+  - Environment variables set in the target environment
 
-Post-deploy
-☐ Monitor error tracking (Sentry) for 30 minutes
-☐ Verify Core Web Vitals in production
-☐ Check critical user journeys manually
-☐ Confirm analytics/tracking events firing
+After deploying
+  - Monitor error tracking (Sentry) for 30 minutes
+  - Verify critical user journeys manually in production
+  - Confirm analytics events are firing correctly
 ```
 
 ---
 
-## 📐 Coding Standards & Conventions
+## Coding Standards and Conventions
 
 ### Naming Conventions
 
@@ -2758,445 +2142,365 @@ function fetchUserData() {}
 
 // React components — PascalCase
 function UserProfileCard() {}
-const UserProfileCard = () => {};
 
 // Constants — SCREAMING_SNAKE_CASE
 const MAX_RETRY_ATTEMPTS = 3;
 const API_TIMEOUT_MS = 5000;
 
-// CSS classes — kebab-case (BEM)
-.user-card {}
-.user-card__header {}
-.user-card--featured {}
+// CSS classes — kebab-case with BEM
+// .user-card {}
+// .user-card__header {}
+// .user-card--featured {}
 
-// Files
-// Components: PascalCase
-UserProfileCard.jsx
-UserProfileCard.test.jsx
-UserProfileCard.module.css
-
-// Non-component JS: camelCase
-apiClient.js
-useAuthStore.js
-formatCurrency.js
-
-// Pages: PascalCase (they are components)
-DashboardPage.jsx
-SettingsPage.jsx
+// Files:
+//   Components — PascalCase:    UserProfileCard.jsx
+//   Everything else — camelCase: apiClient.js, useAuthStore.js
 ```
 
 ### Code Style Rules
 
+Be explicit, not clever. Code is read far more often than it is written. Optimizing for the reader is always the right investment.
+
 ```js
-// ✅ Prefer explicit over clever
-// ❌ Clever but unreadable
-const result = arr.reduce((a, b) => ({...a, [b.id]: b}), {});
+// Bad: clever but hard to understand
+const map = arr.reduce((a, b) => ({...a, [b.id]: b}), {});
 
-// ✅ Clear
-const result = {};
-for (const item of arr) {
-  result[item.id] = item;
+// Good: clear intent
+const usersById = {};
+for (const user of users) {
+  usersById[user.id] = user;
 }
 
-// ✅ Functions do one thing
-// ❌ Overloaded function
-async function handleUser(user, action) {
-  if (action === 'save') { ... }
-  else if (action === 'delete') { ... }
-  else if (action === 'notify') { ... }
-}
+// Use early returns to keep the happy path clean
 
-// ✅ Separate functions
-async function saveUser(user) { ... }
-async function deleteUser(userId) { ... }
-async function notifyUser(userId) { ... }
-
-// ✅ Early returns over deep nesting
-// ❌ Nested hell
+// Bad: logic buried three levels deep
 function processOrder(order) {
   if (order) {
     if (order.isValid) {
       if (order.items.length > 0) {
-        // actual logic buried 3 levels deep
+        // the actual work is here
       }
     }
   }
 }
 
-// ✅ Guard clauses
+// Good: guard clauses at the top, clean logic at the bottom
 function processOrder(order) {
   if (!order) throw new Error('Order is required');
   if (!order.isValid) throw new ValidationError('Invalid order');
   if (!order.items.length) throw new Error('Order has no items');
 
-  // Clean, focused logic here
+  // the actual work is easy to find and read
 }
 ```
 
 ---
 
-## 🚨 Common Mistakes & Anti-Patterns
+## Common Mistakes and Anti-Patterns
 
-### HTML Anti-Patterns
+### HTML
 
 ```html
-<!-- ❌ Div soup -->
+<!-- Bad: using a div as a button — not accessible by keyboard or screen reader -->
 <div class="button" onclick="submit()">Submit</div>
-<!-- ✅ Use semantic elements -->
+
+<!-- Good: use the right element -->
 <button type="submit">Submit</button>
 
-<!-- ❌ Missing label (inaccessible) -->
+
+<!-- Bad: input with no associated label -->
 <input type="text" placeholder="Enter email" />
-<!-- ✅ Associated label -->
+
+<!-- Good: label is associated via the for/id pair -->
 <label for="email">Email</label>
 <input type="text" id="email" placeholder="Enter email" />
-
-<!-- ❌ Inline styles -->
-<p style="color: red; font-size: 14px;">Error message</p>
-<!-- ✅ Use classes -->
-<p class="error-message">Error message</p>
 ```
 
-### CSS Anti-Patterns
+### CSS
 
 ```css
-/* ❌ !important as a first resort */
+/* Bad: using !important as a first resort */
 .button { color: red !important; }
 
-/* ❌ Overly specific selectors */
+/* Bad: overly specific selectors that cannot be overridden */
 div.page > ul.nav-list > li.nav-item > a.nav-link { }
 
-/* ❌ Magic numbers */
+/* Bad: magic number with no explanation */
 .element { margin-top: 37px; }
 
-/* ❌ Hardcoded colors (not using variables) */
+/* Bad: hardcoded color instead of a variable */
 .button { background: #1a73e8; }
 
-/* ✅ */
+/* Good */
 .button { background: var(--color-primary); }
 ```
 
-### JavaScript Anti-Patterns
+### JavaScript
 
 ```js
-// ❌ Mutating state or function arguments
+// Bad: mutating a function argument
 function addUser(users, user) {
-  users.push(user);  // Mutates original array
+  users.push(user);  // Modifies the original array
   return users;
 }
 
-// ❌ Callback hell
-fetchUser(id, function(user) {
-  fetchPosts(user.id, function(posts) {
-    fetchComments(posts[0].id, function(comments) {
-      // ← You've entered the pyramid of doom
-    });
-  });
-});
+// Good: return new data
+function addUser(users, user) {
+  return [...users, user];
+}
 
-// ❌ Swallowing errors silently
+// Bad: swallowing errors silently
 try {
   await doSomething();
-} catch (e) {} // ← Error eaten alive
+} catch (e) {}  // Error disappears — you will never know what went wrong
 
-// ❌ Comparing floating point directly
-0.1 + 0.2 === 0.3  // false!
-// ✅
-Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON
+// Bad: floating point comparison
+0.1 + 0.2 === 0.3  // false in JavaScript
 
-// ❌ Using var
-var x = 1;
-
-// ❌ == instead of ===
-if (x == '1') {}
+// Good
+Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON  // true
 ```
 
-### React Anti-Patterns
+### React
 
 ```jsx
-// ❌ Direct state mutation
-state.items.push(newItem);  // Will NOT trigger re-render
+// Bad: mutating state directly — React cannot detect the change
+state.items.push(newItem);
 setItems(state.items);
 
-// ✅ Create new reference
+// Good: create a new array reference
 setItems([...state.items, newItem]);
 
-// ❌ Derived state in useState (gets out of sync)
-const [firstName, setFirstName] = useState('Amara');
-const [fullName, setFullName] = useState('Amara Osei'); // ← Duplicated
 
-// ✅ Derive it
-const [firstName, setFirstName] = useState('Amara');
-const [lastName, setLastName] = useState('Osei');
-const fullName = `${firstName} ${lastName}`; // Derived
+// Bad: storing derived data in its own useState — it will get out of sync
+const [items, setItems] = useState([]);
+const [count, setCount] = useState(0);  // This is just items.length
 
-// ❌ useEffect for data transformation
-useEffect(() => {
-  setFilteredItems(items.filter(i => i.active));
-}, [items]);
+// Good: derive it
+const [items, setItems] = useState([]);
+const count = items.length;
 
-// ✅ Derive it
-const filteredItems = items.filter(i => i.active); // Just compute it
 
-// ❌ Missing cleanup in useEffect
+// Bad: missing cleanup in useEffect — memory leak
 useEffect(() => {
   const interval = setInterval(tick, 1000);
-  // ← Missing return () => clearInterval(interval)
 }, []);
 
-// ❌ Object/array as useEffect dependency without useMemo
+// Good: always return a cleanup function
 useEffect(() => {
-  fetchData(options);
-}, [{ userId, page }]); // New object on every render → infinite loop!
+  const interval = setInterval(tick, 1000);
+  return () => clearInterval(interval);
+}, []);
+
+
+// Bad: passing a new object as a dependency — causes an infinite loop
+useEffect(() => {
+  fetchData(filters);
+}, [{ page, userId }]);  // New object reference created on every render
+
+// Good: use primitive values as dependencies
+useEffect(() => {
+  fetchData({ page, userId });
+}, [page, userId]);
 ```
 
 ---
 
-## ✅ Frontend Project Checklist
+## Frontend Project Checklist
 
 ### Before Development Starts
 
 ```
-☐ Requirements are clarified and signed off
-☐ Design mockups reviewed and accessible assets provided
-☐ API contracts defined (OpenAPI spec or agreed endpoints)
-☐ Project folder structure set up per this guide
-☐ Linting, formatting, and pre-commit hooks configured
-☐ CI/CD pipeline established
-☐ Environment variables documented in .env.example
+- Requirements are clarified and documented
+- Design mockups reviewed and design assets are available
+- API contracts defined with the backend team
+- Project folder structure set up per this guide
+- Linting, formatting, and pre-commit hooks configured
+- CI/CD pipeline established
+- Environment variables documented in .env.example
 ```
 
 ### During Development
 
 ```
-☐ Semantic HTML used throughout
-☐ Components are accessible (keyboard, ARIA, focus management)
-☐ Responsive on mobile, tablet, and desktop
-☐ Loading, error, and empty states handled
-☐ Forms have proper validation and error messages
-☐ No console.log statements in production code
-☐ No hardcoded colors, sizes, or magic numbers
-☐ No commented-out code blocks
-☐ API errors are caught and surfaced to the user
+- Semantic HTML used throughout
+- All interactive components work with keyboard navigation
+- ARIA attributes added where native semantics are insufficient
+- All interactive elements have a visible focus style
+- Responsive on mobile, tablet, and desktop viewports
+- Loading, error, and empty states handled for all data fetches
+- Forms have validation and clear, descriptive error messages
+- No console.log statements committed to the codebase
+- No hardcoded colors or magic numbers — use CSS variables and constants
 ```
 
-### Pre-PR Checklist
+### Before Submitting a Pull Request
 
 ```
-☐ Code is self-reviewed (read your own diff first)
-☐ Unit tests written for new logic
-☐ Tests passing locally (pnpm test)
-☐ Linting passing (pnpm lint)
-☐ Build succeeds (pnpm build)
-☐ Tested in Chrome, Firefox, and Safari
-☐ Tested on mobile viewport (DevTools device emulation)
-☐ Accessibility checked (keyboard navigation + screen reader)
-☐ No new bundle size regressions (check with import cost)
+- Read your own diff before requesting a review
+- Unit tests written for new logic
+- All tests pass locally
+- Linting passes with no errors
+- Build succeeds
+- Tested in Chrome, Firefox, and Safari
+- Tested on a mobile viewport using DevTools device emulation
+- Keyboard navigation tested on new interactive elements
 ```
 
-### Pre-Launch Checklist
+### Before Launching
 
 ```
-☐ Lighthouse audit: Performance ≥ 90, Accessibility = 100
-☐ Core Web Vitals in green on real devices (PageSpeed Insights)
-☐ CSP headers configured
-☐ Error tracking (Sentry) connected and tested
-☐ Analytics events verified
-☐ Favicon and OG meta tags in place
-☐ robots.txt and sitemap.xml present
-☐ 404 page implemented
-☐ All environment variables set in production
-☐ Final E2E test run against production URL
+- Lighthouse audit: Performance 90 or above, Accessibility 100
+- Core Web Vitals checked on real devices using PageSpeed Insights
+- Error tracking connected and tested
+- Favicon and Open Graph meta tags in place
+- 404 page implemented
+- robots.txt and sitemap.xml present
+- All environment variables set in the production environment
 ```
 
 ---
 
-## 📚 Recommended Libraries & Ecosystem
-
-### Core Libraries
+## Recommended Libraries and Ecosystem
 
 | Category | Library | Notes |
 |---|---|---|
-| **Framework** | React 18 | Concurrent features, transitions |
-| **Build Tool** | Vite | Fast dev server, modern bundling |
-| **Routing** | React Router v6 | Data loaders, nested routes |
-| **Server State** | TanStack Query v5 | Caching, background refetch |
-| **Client State** | Zustand | Minimal boilerplate, great DX |
-| **Forms** | React Hook Form | Performant, schema validation |
-| **Validation** | Zod | TypeScript-first schema validation |
-| **Styling** | CSS Modules + CSS Variables | Scoped styles, no runtime |
-| **UI Primitives** | Radix UI | Accessible, unstyled headless components |
-| **Icons** | Lucide React | Consistent, tree-shakeable icon set |
-| **Animations** | Framer Motion | Production-grade animations |
-| **HTTP** | Axios or native Fetch | Prefer native Fetch with wrapper |
-| **Date/Time** | date-fns | Lightweight, tree-shakeable |
-| **Testing** | Vitest + RTL | Fast, Vite-native test runner |
-| **E2E Testing** | Playwright | Cross-browser, robust, modern |
-| **API Mocking** | MSW (Mock Service Worker) | Network-level API mocking |
-| **Documentation** | Storybook | Component documentation and development |
-| **Error Tracking** | Sentry | Production error monitoring |
-| **Analytics** | PostHog | Open-source, privacy-respecting |
-
-### TypeScript (Strongly Recommended)
-
-```tsx
-// Define prop types with interfaces
-interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
-  loading?: boolean;
-  disabled?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  children: React.ReactNode;
-  className?: string;
-}
-
-function Button({
-  variant = 'primary',
-  size = 'md',
-  loading = false,
-  disabled,
-  onClick,
-  children,
-  className,
-}: ButtonProps) {
-  return (
-    <button
-      className={`btn btn--${variant} btn--${size} ${className ?? ''}`}
-      disabled={disabled || loading}
-      aria-busy={loading}
-      onClick={onClick}
-    >
-      {loading && <Spinner size="sm" />}
-      {children}
-    </button>
-  );
-}
-```
+| Framework | React 18 | Concurrent rendering, transitions |
+| Build tool | Vite | Fast development, modern bundling |
+| Routing | React Router v6 | Nested routes, data loaders |
+| Server state | TanStack Query v5 | Caching, background refetching |
+| Client state | Zustand | Minimal boilerplate |
+| Forms | React Hook Form | Performant, integrates with Zod |
+| Validation | Zod | TypeScript-first schema validation |
+| Styling | CSS Modules with CSS Variables | Scoped styles, no runtime cost |
+| UI Primitives | Radix UI | Accessible, unstyled headless components |
+| Icons | Lucide React | Consistent, tree-shakeable icon set |
+| Animations | Framer Motion | Production-grade animations |
+| Date handling | date-fns | Lightweight and tree-shakeable |
+| Unit testing | Vitest and React Testing Library | Fast, native to Vite |
+| E2E testing | Playwright | Cross-browser, reliable, modern |
+| API mocking | Mock Service Worker (MSW) | Network-level mocking in tests |
+| Component docs | Storybook | Isolated component development |
+| Error tracking | Sentry | Production error monitoring |
 
 ---
 
-## 🗺️ Developer Roadmaps
+## Developer Roadmaps
 
-### Junior Frontend Engineer Path
-
-```
-Month 1–2: Foundations
-  ├── HTML5 semantics and accessibility basics
-  ├── CSS3: Box model, Flexbox, Grid, responsive design
-  ├── JavaScript: ES6+, DOM manipulation, async/await
-  └── Git basics: branching, committing, PRs
-
-Month 3–4: React Fundamentals
-  ├── Components, JSX, props, state
-  ├── Core hooks: useState, useEffect, useRef
-  ├── React Router: nested routes, params
-  └── Forms: controlled inputs, validation
-
-Month 5–6: Building Real Features
-  ├── API integration with React Query
-  ├── Error handling and loading states
-  ├── Component testing with RTL
-  └── Deploy a complete feature end-to-end
-```
-
-### Mid-Level Frontend Engineer Path
+### Junior Frontend Engineer (Months 1 to 6)
 
 ```
-Deepen Fundamentals
-  ├── TypeScript: interfaces, generics, utility types
-  ├── Advanced hooks: useCallback, useMemo, useReducer
-  ├── Custom hooks: extract, reuse, test
-  └── Performance: profiling, memoization, code splitting
+Months 1 to 2: Foundations
+  - HTML5 semantics and accessibility basics
+  - CSS: box model, Flexbox, Grid, responsive design
+  - JavaScript: ES6+, DOM, async/await, Fetch API
+  - Git: branching, committing, opening pull requests
 
-Architecture & Patterns
-  ├── Component patterns: compound, render props, HOC
-  ├── State management: Context, Zustand, Redux Toolkit
-  ├── Accessibility: WCAG 2.1 AA compliance
-  └── Testing: integration tests, E2E with Playwright
+Months 3 to 4: React Fundamentals
+  - Components, JSX, props, and state
+  - Core hooks: useState, useEffect, useRef
+  - React Router: routes, nested routes, URL params
+  - Forms: controlled inputs, validation, error handling
 
-Craft & Standards
-  ├── Code review: giving and receiving feedback
-  ├── Technical documentation
-  ├── Performance optimization: Core Web Vitals
-  └── Security: XSS, CSRF, CSP
+Months 5 to 6: Building Real Features
+  - API integration with React Query
+  - Loading, error, and empty state patterns
+  - Component testing with React Testing Library
+  - Deploy a complete feature from start to finish
 ```
 
-### Senior Frontend Engineer Path
+### Mid-Level Frontend Engineer
+
+```
+Deepen Core Skills
+  - TypeScript: interfaces, generics, utility types
+  - Advanced hooks: useCallback, useMemo, useReducer
+  - Custom hooks: write, test, and reuse them
+  - Performance: profiling, memoization, code splitting
+
+Architecture and Patterns
+  - Component composition patterns
+  - State management: Context, Zustand, Redux Toolkit
+  - Accessibility: WCAG 2.1 AA compliance and auditing
+  - Integration and E2E testing with Playwright
+
+Engineering Habits
+  - Code review: giving specific, constructive feedback
+  - Writing technical documentation
+  - Core Web Vitals and performance optimization
+  - Frontend security fundamentals
+```
+
+### Senior Frontend Engineer
 
 ```
 Technical Leadership
-  ├── System design: scalable frontend architecture
-  ├── Design system creation and governance
-  ├── Performance engineering at scale
-  └── Cross-team API design and contracts
+  - Frontend system design and scalable architecture
+  - Design system creation and maintenance
+  - Cross-team API contract design
+  - Build tool internals and performance optimization
 
 Engineering Culture
-  ├── Mentoring junior and mid-level engineers
-  ├── RFC (Request for Comments) writing
-  ├── Driving technical standards and conventions
-  └── Incident response and post-mortems
+  - Mentoring junior and mid-level engineers
+  - Writing technical proposals and RFCs
+  - Driving team standards and engineering practices
+  - Incident response and retrospectives
 
 Advanced Topics
-  ├── Micro-frontends
-  ├── SSR/SSG/ISR with Next.js
-  ├── Web Workers and Worklets
-  ├── WebAssembly
-  └── Build tool internals (Rollup, esbuild)
+  - Server-side rendering and static generation with Next.js
+  - Web Workers for offloading CPU-intensive work
+  - Micro-frontend architecture
+  - Accessibility auditing and remediation at scale
 ```
 
 ---
 
-## 🎯 Interview Preparation
+## Interview Preparation
 
-### Core Topics
+### Topics to Know Well
 
-**HTML/CSS:**
-- Explain the CSS cascade, specificity, and inheritance
-- How does Flexbox differ from Grid? When do you use each?
-- What are semantic elements and why do they matter?
-- Explain responsive design and mobile-first approach
+**HTML and CSS:**
+- What is the CSS cascade and how does specificity work?
+- When do you use Flexbox vs Grid?
+- What are semantic HTML elements and why do they matter?
+- What is a mobile-first approach to responsive design?
 - What is the critical rendering path?
 
 **JavaScript:**
 - Explain closures with a practical example
-- What is the event loop? How does `async/await` work under the hood?
-- Explain `this` in different contexts
+- What is the event loop? How does async/await work under the hood?
+- What is the difference between `var`, `let`, and `const`?
+- How does `this` behave in regular functions vs arrow functions?
 - What is prototypal inheritance?
-- Difference between `==` and `===`; when does type coercion happen?
-- Explain `var`, `let`, `const` and their scoping rules
 
 **React:**
 - What is the Virtual DOM and how does reconciliation work?
-- Explain the rules of hooks
+- What are the rules of hooks and why do they exist?
 - When would you use `useCallback` vs `useMemo`?
 - What is the difference between controlled and uncontrolled components?
-- How does React's Context API differ from state management libraries?
-- Explain the `useEffect` dependency array and cleanup
+- How do you handle loading and error states in a React application?
 
 **System Design:**
-- How would you architect a real-time chat application?
-- Design a component library from scratch
-- How would you implement infinite scroll at scale?
-- Design an authentication system for a SPA
+- How would you architect a real-time notification system?
+- How would you build a component library from scratch?
+- How would you implement infinite scroll for a large dataset?
 
 ### Practical Exercises
 
 ```
-☐ Build a debounced search with API integration (no libraries)
-☐ Implement a custom useLocalStorage hook
-☐ Create a reusable Modal component (focus trap, keyboard nav)
-☐ Build a responsive data table with sorting and pagination
-☐ Implement an infinite scroll list with React Query
-☐ Write unit tests for a custom hook
-☐ Debug and fix a React performance issue using the profiler
+- Build a debounced search that calls an API, using no external libraries
+- Implement a useLocalStorage custom hook from scratch
+- Create an accessible modal with a focus trap and keyboard close (Escape key)
+- Build a sortable, paginated data table
+- Write unit tests for a custom hook using renderHook
+- Debug a React performance issue using the Profiler tab
 ```
 
 ---
 
-## 🎓 Learning Resources
+## Learning Resources
 
-### Official Documentation (Start Here)
+### Official Documentation
 
 | Resource | URL |
 |---|---|
@@ -3204,125 +2508,82 @@ Advanced Topics
 | React Documentation | https://react.dev |
 | Can I Use | https://caniuse.com |
 | web.dev by Google | https://web.dev |
-| TC39 Proposals (JS futures) | https://github.com/tc39/proposals |
-| WCAG Guidelines | https://www.w3.org/WAI/WCAG21/quickref/ |
+| WCAG 2.1 Quick Reference | https://www.w3.org/WAI/WCAG21/quickref/ |
+| JavaScript.info | https://javascript.info |
 
 ### Books Worth Reading
 
-| Book | Why |
+| Book | Why Read It |
 |---|---|
-| *JavaScript: The Good Parts* — Crockford | Core JS design philosophy |
-| *Clean Code* — Uncle Bob | Writing maintainable code |
-| *Designing Data-Intensive Applications* — Kleppmann | System thinking for engineers |
-| *The Pragmatic Programmer* — Hunt & Thomas | Engineering mindset |
-
-### Tools for Practice
-
-| Resource | Purpose |
-|---|---|
-| **CSS Tricks** | CSS guides and demos |
-| **JavaScript.info** | Best modern JS tutorial |
-| **React Patterns** | Advanced React patterns |
-| **VisBug** | Design debugging in browser |
-| **Excalidraw** | Diagram your architecture |
-| **Bundle Phobia** | Check npm package sizes |
+| JavaScript: The Good Parts by Douglas Crockford | Core language design and philosophy |
+| Clean Code by Robert C. Martin | Writing code that is easy to read and maintain |
+| The Pragmatic Programmer by Hunt and Thomas | Engineering mindset and professional habits |
 
 ---
 
-## 🤝 Contribution Guidelines
+## Contribution Guidelines
 
 ### Contributing to This Handbook
 
-This document is a living guide. Every Sandlip Oasis frontend engineer is empowered to improve it.
+Every Sandlip Oasis frontend engineer is empowered to improve this document.
 
 **How to contribute:**
 
-1. Open an issue describing what's missing, incorrect, or unclear
-2. Fork the repository and create a `docs/` branch
+1. Open an issue describing what is missing, incorrect, or unclear
+2. Create a branch named `docs/your-topic`
 3. Make your changes with clear, concise writing
-4. Submit a PR with a description of what was changed and why
-5. At least one senior engineer must review documentation PRs
+4. Submit a pull request that describes what changed and why
+5. A senior engineer must review and approve all documentation pull requests
 
 **What makes a good contribution:**
-- Fixes an inaccuracy or outdated information
-- Adds a real-world example from experience
-- Improves clarity without adding length
-- Fills a genuine knowledge gap
 
-**What not to contribute:**
-- Content that duplicates existing material
-- Opinionated preferences without team consensus
-- Content copy-pasted from external sources
+- Fixes an inaccuracy or outdated piece of information
+- Adds a real example drawn from actual project experience
+- Improves clarity without adding unnecessary length
+- Fills a genuine knowledge gap for new engineers
 
-### Code of Conduct in Reviews
+**What to avoid:**
 
-- Be specific and actionable ("This should use `useCallback` because X" not "this is wrong")
-- Distinguish between blocking issues and suggestions
-- Use "we" not "you" ("We prefer const here..." not "You should use const...")
-- Acknowledge good work, not just problems
-- Review the code, not the person
+- Duplicating content that already exists in the guide
+- Subjective style preferences presented as team standards
+- Content copied verbatim from external sources
 
----
+### How to Give Good Code Review Feedback
 
-## 📎 Appendix
+Be specific and actionable. "This should use `useCallback` because this function is passed as a prop to a memoized child component" is helpful. "This is wrong" is not.
 
-### Useful Snippets Reference
+Distinguish between blocking issues and optional suggestions. Make it clear which is which in your comment.
 
-```js
-// Debounce
-const debounce = (fn, ms) => {
-  let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
-};
+Use "we" rather than "you." The standard is shared: "We prefer `const` here" rather than "You should use `const`."
 
-// Throttle
-const throttle = (fn, ms) => {
-  let last = 0;
-  return (...args) => {
-    const now = Date.now();
-    if (now - last >= ms) { last = now; fn(...args); }
-  };
-};
+Acknowledge good work, not only problems. A review is a conversation, not a list of complaints.
 
-// Deep clone (when structuredClone isn't available)
-const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
-
-// Class names helper (poor man's clsx)
-const cn = (...classes) => classes.filter(Boolean).join(' ');
-
-// Sleep (for testing/demo purposes only)
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-// Truncate text
-const truncate = (str, maxLength) =>
-  str.length > maxLength ? `${str.slice(0, maxLength)}…` : str;
-
-// Format file size
-const formatBytes = (bytes) => {
-  if (bytes === 0) return '0 B';
-  const k = 1024;
-  const sizes = ['B', 'KB', 'MB', 'GB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
-};
-```
+Review the code, not the person.
 
 ---
 
-<div align="center">
+## Repository Setup Reference
+
+**Suggested repository names:**
+
+| Name | Notes |
+|---|---|
+| `sandlip-oasis/frontend-handbook` | Recommended — clear, simple, discoverable |
+| `sandlip-oasis/frontend-engineering-guide` | Descriptive and role-aligned |
+| `sandlip-oasis/ui-engineering-standards` | Formal and enterprise-grade |
+
+**Repository description:**
+
+The Sandlip Oasis Frontend Engineering Handbook — a comprehensive guide covering HTML5, CSS3, JavaScript ES6+, and React.js for internal onboarding, training, and engineering standards.
+
+**Suggested GitHub topics:**
+
+`frontend` `html5` `css3` `javascript` `react` `engineering-standards` `onboarding` `best-practices` `accessibility` `performance` `sandlip-oasis`
 
 ---
 
-**Sandlip Oasis Engineering**
-
-Built with care by the Sandlip Oasis frontend engineering team.
-
-*This handbook is maintained as a living document. Last substantive revision tracked in git history.*
-
-*If something is wrong, outdated, or missing — open an issue. We build this together.*
+*This handbook is maintained as a living document by the Sandlip Oasis engineering team. If something is wrong, outdated, or missing, open an issue. We build this together.*
 
 ---
 
-> *"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."*
-> — Martin Fowler
-
-</div>
+> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler
